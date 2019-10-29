@@ -42,4 +42,12 @@ export default {
     margin-bottom: 10px;
   }
 
+  .shadowBox, .card {
+    box-shadow: 3px 3px #ccc;
+  }
+
+  .card, .card-header {
+    border-radius: 0 !important;
+  }
+
 </style>

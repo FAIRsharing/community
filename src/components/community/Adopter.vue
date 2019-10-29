@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="graph">
-                        <highcharts :options="chartOptions"></highcharts>
+                        <highcharts :options="chartOptions" class="shadowBox"></highcharts>
                     </div>
                 </div>
                 <div class="col-6">
