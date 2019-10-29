@@ -38,4 +38,8 @@ export default {
     width:100%;
   }
 
+  .col {
+    margin-bottom: 10px;
+  }
+
 </style>

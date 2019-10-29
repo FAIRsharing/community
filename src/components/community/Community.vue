@@ -19,26 +19,13 @@
                         </div>
                     </div>
 
-                    <div class="col col-4">
+                    <div class="col col-8">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Adopters</h4>
                             </div>
                             <div class="card-body">
-                                <div>
-                                    Anyone can use FAIRsharing. Adopters, however, use FAIRsharing specifically to:
-                                    <ol>
-                                    <li>Educate their users/community on the variety of existing standards, repositories and policies, and actively encourage them to submit/claim records, where relevant;</li>
-                                    <li>Create Recommendations by registering their data policy, and then link it to standards and/or databases recommended in the policy; and/or</li>
-                                    <li>Create a Collection by pulling together a list of standards and/or databases around a given domain of interest relevant to them.</li>
-                                    </ol>
-                                    Here are the instructions for record creation.<br>
-                                    Adopters are generally representatives of institutions, libraries, journal publishers,
-                                    infrastructure programmes, societies and other organizations or projects that in turn serve and guide individual
-                                    researchers or other stakeholders on research data management matters.<br>
-                                    Adopters have a FAIRsharing logo on their websites with a link from their website to our homepage.<br>
-                                    <b>We cannot list all of our adopters, but list here those publishers that use FAIRsharing to define and refine their data policy.</b>
-                                </div>
+                                <adopter></adopter>
                             </div>
                         </div>
                     </div>
@@ -87,10 +74,12 @@
 
 <script>
     import Activity from './Activity.vue'
+    import Adopter from './Adopter.vue'
     export default {
         name: "Community",
         components: {
-            Activity
+            Activity,
+            Adopter
         }
     }
 </script>
@@ -127,10 +116,6 @@
 
     .card-header {
         padding: 2px 10px;
-    }
-
-    .col {
-        margin-bottom: 10px;
     }
 
 </style>
