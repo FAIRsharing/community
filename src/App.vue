@@ -38,7 +38,7 @@ export default {
     width:100%;
   }
 
-  .col {
+  .colMargin {
     margin-bottom: 10px;
   }
 

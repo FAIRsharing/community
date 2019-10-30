@@ -8,7 +8,7 @@
             <div class="">
                 <div class="row">
 
-                    <div class="col col-lg-4 col-xl-4 col-sm-12 col-md-12">
+                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Activities</h4>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
 
-                    <div class="col col-lg-8 col-xl-8 col-sm-12 col-md-12">
+                    <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Adopters</h4>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
 
-                    <div class="col col-lg-4 col-xl-4 col-sm-12 col-md-12">
+                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Recommendations</h4>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
 
-                    <div class="col col-lg-4 col-xl-4 col-sm-12 col-md-12">
+                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Governance</h4>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="col col-lg-4 col-xl-4 col-sm-12 col-md-12">
+                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Citing Us</h4>

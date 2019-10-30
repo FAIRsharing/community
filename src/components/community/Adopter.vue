@@ -231,6 +231,7 @@
     .textZone {
         text-align: center;
         margin-bottom: 10px;
+        padding:0 10px;
     }
 
     .leftCol {
