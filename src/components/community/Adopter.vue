@@ -1,76 +1,54 @@
 <template>
     <div>
-        Anyone can use FAIRsharing. Adopters, however, use FAIRsharing specifically to:
-        <ol>
-            <li>Educate their users/community on the variety of existing standards, repositories and policies, and actively encourage them to submit/claim records, where relevant;</li>
-            <li>Create Recommendations by registering their data policy, and then link it to standards and/or databases recommended in the policy; and/or</li>
-            <li>Create a Collection by pulling together a list of standards and/or databases around a given domain of interest relevant to them.</li>
-        </ol>
-        Here are the instructions for record creation.<br>
-        Adopters are generally representatives of institutions, libraries, journal publishers,
-        infrastructure programmes, societies and other organizations or projects that in turn serve and guide individual
-        researchers or other stakeholders on research data management matters.<br>
-        Adopters have a FAIRsharing logo on their websites with a link from their website to our homepage.<br>
-        <b>We cannot list all of our adopters, but list here those publishers that use FAIRsharing to define and refine their data policy.</b>
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6">
+                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
+                    <div class="text">
+                        Anyone can use FAIRsharing. Adopters, however, use FAIRsharing specifically to:
+                        <ol>
+                            <li>Educate their users/community on the variety of existing standards, repositories and policies, and actively encourage them to submit/claim records, where relevant;</li>
+                            <li>Create Recommendations by registering their data policy, and then link it to standards and/or databases recommended in the policy; and/or</li>
+                            <li>Create a Collection by pulling together a list of standards and/or databases around a given domain of interest relevant to them.</li>
+                        </ol>
+                        Here are the instructions for record creation.<br>
+                        Adopters are generally representatives of institutions, libraries, journal publishers,
+                        infrastructure programmes, societies and other organizations or projects that in turn serve and guide individual
+                        researchers or other stakeholders on research data management matters.<br>
+                        Adopters have a FAIRsharing logo on their websites with a link from their website to our homepage.<br>
+                    </div>
                     <div class="graph">
                         <highcharts :options="chartOptions" class="shadowBox"></highcharts>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
                     <div class="grid container-fluid">
                         <div class="row">
-                            <div class="col col-4">
-                                <div class="card">
-                                    eLife
-                                </div>
+                            <div class="col-12" style="text-align: center;">
+                                <b>We cannot list all of our adopters, but list here those publishers that use FAIRsharing to define and refine their data policy.</b>
+                                <hr>
                             </div>
-                            <div class="col col-4">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-6 col-xl-4"
+                                 v-for="item in gridItems"
+                                 :key="'item_' + item.name"
+                                 style="margin-bottom:20px;">
                                 <div class="card">
-                                    Elsevier
-                                </div>
-                            </div>
-                            <div class="col col-4">
-                                <div class="card">
-                                    EMBO Press
-                                </div>
-                            </div>
-                            <div class="col col-4">
-                                <div class="card">
-                                    Springer Nature BioMed Central
-                                </div>
-                            </div>
-                            <div class="col col-4">
-                                <div class="card">
-                                    GigaScience
-                                </div>
-                            </div>
-                            <div class="col col-4">
-                                <div class="card">
-                                    Public Library of Science (PLOS)
-                                </div>
-                            </div>
-                            <div class="col col-4">
-                                <div class="card">
-                                    Springer Nature BioMed Central
-                                </div>
-                            </div>
-                            <div class="col col-4">
-                                <div class="card">
-                                    Taylor and Francis
-                                </div>
-                            </div>
-                            <div class="col col-4">
-                                <div class="card">
-                                    Wiley
-                                </div>
-                            </div>
-                            <div class="col col-4">
-                                <div class="card">
-                                    Wellcome Open Research
+                                    <div class="card-body">
+                                        <div class="logoZone">
+                                            <img :src="item.logo" class="logo">
+                                        </div>
+                                        <div class="title">
+                                            <div>{{item.name}}</div>
+                                        </div>
+                                        <div class="textZone">
+                                            <div>
+                                                - <br>
+                                                {{item.text}}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -83,69 +61,121 @@
 </template>
 
 <script>
+
     export default {
         name: "Adopter",
         data() {
             return {
                 chartOptions: {
+                    colors: ['#E27D60', '#27aae1', '#98bfcc'],
                     chart: {
-                        type: 'bubble',
-                        zoomType: 'xy',
-                        plotShadow: true,
-                        renderTo: 'container',
-                        margin: 0,
-                        plotBackgroundColor: '#f8f8f8',
-                    },
-                    legend: {
-                        enabled: true
+                        type: 'column',
+                        plotBackgroundColor: 'white',
+                        backgroundColor: '#f8f8f8',
+                        plotBorderWidth: 1,
+                        renderTo: 'container'
                     },
                     title: {
-                        text: 'FAIRsharing Adopters'
+                        text: 'FAIRsharing adopters databases and standards'
                     },
                     xAxis: {
-                        visible: false
+                        categories: [
+                            'Elsevier',
+                            'EMBO press',
+                            'F1000Research',
+                            'Gigascience',
+                            'PLOS',
+                            'BioMed Central',
+                            'Scientific Data',
+                            'Taylor and Francis',
+                            'Wellcome Open Research'
+                        ]
                     },
                     yAxis: {
-                        visible: false
+                        title: {
+                            enabled: false,
+                            text: undefined
+                        }
                     },
-                    tooltip: {
-                        useHTML: true,
-                        headerFormat: '<table>',
-                        pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
-                        '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
-                        '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
-                        '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
-                        footerFormat: '</table>',
-                        followPointer: true
+                    credits: {
+                        enabled: false
                     },
                     plotOptions: {
                         series: {
-                            dataLabels: {
-                                enabled: true,
-                                format: '{point.name}'
-                            }
+                            pointWidth: 30
                         }
                     },
-                    series: [{
-                        data: [
-                            { x: 95, y: 95, z: 13.8, name: 'BE', country: 'Belgium' },
-                            { x: 86.5, y: 102.9, z: 14.7, name: 'DE', country: 'Germany' },
-                            { x: 80.8, y: 91.5, z: 15.8, name: 'FI', country: 'Finland' },
-                            { x: 80.4, y: 102.5, z: 12, name: 'NL', country: 'Netherlands' },
-                            { x: 80.3, y: 86.1, z: 11.8, name: 'SE', country: 'Sweden' },
-                            { x: 78.4, y: 70.1, z: 16.6, name: 'ES', country: 'Spain' },
-                            { x: 74.2, y: 68.5, z: 14.5, name: 'FR', country: 'France' },
-                            { x: 73.5, y: 83.1, z: 10, name: 'NO', country: 'Norway' },
-                            { x: 71, y: 93.2, z: 24.7, name: 'UK', country: 'United Kingdom' },
-                            { x: 69.2, y: 57.6, z: 10.4, name: 'IT', country: 'Italy' },
-                            { x: 68.6, y: 20, z: 16, name: 'RU', country: 'Russia' },
-                            { x: 65.5, y: 126.4, z: 35.3, name: 'US', country: 'United States' },
-                            { x: 65.4, y: 50.8, z: 28.5, name: 'HU', country: 'Hungary' },
-                            { x: 63.4, y: 51.8, z: 15.4, name: 'PT', country: 'Portugal' },
-                            { x: 64, y: 82.9, z: 31.3, name: 'NZ', country: 'New Zealand' }
-                        ]
-                    }]
-                }
+                    series: [
+                        {
+                            name: 'Databases',
+                            data: [72,24,47,42,84,0,101,9,48]
+                        },
+                        {
+                            name: 'Standards',
+                            data: [3,9,6,15,1,2,11,1,6]
+                        }/*,
+                        {
+                            name: 'Policy',
+                            data: [0,0,0,0,0,1,0,0,0]
+                        }*/
+                    ]
+                },
+                gridItems: [
+                    {
+                        name: "eLife",
+                        logo: require('../../assets/community/elife_logo.jpg'),
+                        text: 'Policy',
+                        link: 'https://fairsharing.org/FAIRsharing.F0QmCP'
+                    },
+                    {
+                        name: "Elsevier",
+                        logo: require('../../assets/community/ELSEVIER.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/Elsevier'
+                    },
+                    {
+                        name: "EMBO Press",
+                        logo: require('../../assets/community/embo_logo.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/EMBOPress'
+                    },
+                    {
+                        name: "Faculty of 1000",
+                        logo: require('../../assets/community/logo_f1000.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/F1000ResearchRecommendedRepositories'
+                    },
+                    {
+                        name: "GigaScience",
+                        logo: require('../../assets/community/logo_giga_science.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/GigaScience'
+                    },
+                    {
+                        name: "Public Library of Science (PLOS)",
+                        logo: require('../../assets/community/PLOS_logo.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/PLOS'
+                    },
+                    {
+                        name: "Taylor and Francis",
+                        logo: require('../../assets/community/taylor_francis.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/TaylorandFrancis'
+                    },
+                    {
+                        name: "Wiley",
+                        logo: require('../../assets/community/wiley_logo.png'),
+                        text: 'Policy',
+                        link: 'https://fairsharing.org/recommendation/TaylorandFrancis'
+                    },
+                    {
+                        name: "Springer Nature Scientific Data",
+                        logo: require('../../assets/community/SciData_logo.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/TaylorandFrancis'
+                    }
+                ]
             }
         }
     }
@@ -153,7 +183,7 @@
 
 <style scoped>
 
-    .graph, .grid {
+    .graph {
         margin-top: 20px;
     }
 
@@ -161,6 +191,46 @@
         border:1px solid #ccc;
         box-shadow: 3px 3px #ccc;
         padding:10px;
+    }
+
+    .logoZone{
+        height:100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logoZone img{
+        height: 70px;
+        width:80%;
+        transition: all 0.5s;
+    }
+
+    .logoZone img:hover{
+        height:100px;
+        width: 100%;
+    }
+
+    .card {
+        border: 3px solid #27aae1;
+        height:100%;
+    }
+
+    .card-body{
+        padding:0 0;
+    }
+
+    .title {
+        color: #27aae1;
+        font-weight: bolder;
+        text-align: center;
+        font-size: 1.1rem;
+        padding:0 10px;
+    }
+
+    .textZone {
+        text-align: center;
+        margin-bottom: 10px;
     }
 
 </style>

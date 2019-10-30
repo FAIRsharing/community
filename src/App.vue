@@ -34,7 +34,7 @@ export default {
     font-size: 0.8rem !important;
   }
 
-  .row {
+  nav .row {
     width:100%;
   }
 

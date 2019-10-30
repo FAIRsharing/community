@@ -25,7 +25,7 @@
         data() {
             return {
                 chartOptions: {
-                    colors: ['#E27D60', '#41B3A3', '#98bfcc'],
+                    colors: ['#E27D60', '#27aae1', '#98bfcc'],
                     chart: {
                         plotBackgroundColor: '#f8f8f8',
                         plotBorderWidth: 0,
@@ -38,6 +38,9 @@
                         align: 'center',
                         verticalAlign: 'top',
                         y: 30
+                    },
+                    credits: {
+                        enabled: false
                     },
                     tooltip: {
                         formatter: function() {
@@ -71,7 +74,6 @@
                         pie: {
                             dataLabels: {
                                 enabled: true,
-                                distance: -50,
                                 style: {
                                     fontWeight: 'bold',
                                     color: 'white'

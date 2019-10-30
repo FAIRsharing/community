@@ -5,7 +5,7 @@
 
         <div class="container-fluid mainContainer">
 
-            <div class="containerBorder">
+            <div class="">
                 <div class="row">
 
                     <div class="col col-4">
@@ -36,7 +36,7 @@
                                 <h4>Recommendations</h4>
                             </div>
                             <div class="card-body">
-                                We will list a summary of people recommending us here.
+                                <recommendation></recommendation>
                             </div>
                         </div>
                     </div>
@@ -75,11 +75,13 @@
 <script>
     import Activity from './Activity.vue'
     import Adopter from './Adopter.vue'
+    import Recommendation from './Recommendation.vue'
     export default {
         name: "Community",
         components: {
             Activity,
-            Adopter
+            Adopter,
+            Recommendation
         }
     }
 </script>
@@ -115,7 +117,7 @@
     }
 
     .card-header {
-        padding: 2px 10px;
+        padding: 5px 10px;
     }
 
 </style>
