@@ -50,4 +50,8 @@ export default {
     border-radius: 0 !important;
   }
 
+  .chart {
+    height:440px;
+  }
+
 </style>

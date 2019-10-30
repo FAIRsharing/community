@@ -3,7 +3,7 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 leftCol">
                     <div class="text">
                         Anyone can use FAIRsharing. Adopters, however, use FAIRsharing specifically to:
                         <ol>
@@ -18,7 +18,7 @@
                         Adopters have a FAIRsharing logo on their websites with a link from their website to our homepage.<br>
                     </div>
                     <div class="graph">
-                        <highcharts :options="chartOptions" class="shadowBox"></highcharts>
+                        <highcharts :options="chartOptions" class="shadowBox chart"></highcharts>
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12 col-sm-12 col-lg-6 col-xl-4"
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4"
                                  v-for="item in gridItems"
                                  :key="'item_' + item.name"
                                  style="margin-bottom:20px;">
@@ -231,6 +231,10 @@
     .textZone {
         text-align: center;
         margin-bottom: 10px;
+    }
+
+    .leftCol {
+        margin-bottom: 20px;
     }
 
 </style>
