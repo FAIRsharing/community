@@ -18,7 +18,7 @@
                         Adopters have a FAIRsharing logo on their websites with a link from their website to our homepage.<br>
                     </div>
                     <div class="graph">
-                        <highcharts :options="chartOptions" class="shadowBox chart"></highcharts>
+                        <highcharts :options="chartOptions" class="shadowBox chartMin"></highcharts>
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">

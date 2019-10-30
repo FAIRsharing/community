@@ -14,11 +14,11 @@
                             <img :src="item.logo" class="logo">
                         </div>
                         <div class="col-9">
-                            <h4 class="">
+                            <h5 class="">
                                 {{item.name}}
                                 <hr>
                                 <span class="quote">"{{item.quote}}"</span>
-                            </h4>
+                            </h5>
                             {{item.text}}
                         </div>
                     </div>
@@ -81,7 +81,7 @@
         margin-top:20px;
     }
 
-    h4 {
+    h5 {
         text-align: center;
         font-size: 1.2rem;
     }

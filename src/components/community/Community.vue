@@ -47,7 +47,7 @@
                                 <h4>Governance</h4>
                             </div>
                             <div class="card-body">
-                                A few facts about the governance and technical teams.
+                                <governance></governance>
                             </div>
                         </div>
                     </div>
@@ -76,12 +76,15 @@
     import Activity from './Activity.vue'
     import Adopter from './Adopter.vue'
     import Recommendation from './Recommendation.vue'
+    import Governance from './Governance.vue'
+
     export default {
         name: "Community",
         components: {
             Activity,
             Adopter,
-            Recommendation
+            Recommendation,
+            Governance
         }
     }
 </script>

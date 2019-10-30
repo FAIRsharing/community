@@ -10,7 +10,7 @@
             Our activities, classified using the three GO-FAIR pillar structures (change, build, train), are outlined here.
         </p>
 
-        <highcharts :options="chartOptions" class="shadowBox chart"></highcharts>
+        <highcharts :options="chartOptions" class="shadowBox chartMin"></highcharts>
     </div>
 </template>
 

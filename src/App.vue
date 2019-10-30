@@ -50,7 +50,7 @@ export default {
     border-radius: 0 !important;
   }
 
-  .chart {
+  .chartMin {
     height:440px;
   }
 
