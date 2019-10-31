@@ -18,12 +18,12 @@
             return {
                 chartOptions: {
                     chart: {
-                        height: 600,
+                        height:  '40%',
                         inverted: true,
                         plotBackgroundColor: '#f8f8f8',
                         backgroundColor: '#f8f8f8',
                         plotBorderWidth: 0,
-                        renderTo: 'container',
+                        renderTo: 'chart',
                     },
 
                     title: {
@@ -35,97 +35,116 @@
                         name: 'Highsoft',
                         keys: ['from', 'to'],
                         data: [
-                            ['Shareholders', 'Board'],
-                            ['Board', 'CEO'],
-                            ['CEO', 'CTO'],
-                            ['CEO', 'CPO'],
-                            ['CEO', 'CSO'],
-                            ['CEO', 'CMO'],
-                            ['CEO', 'HR'],
-                            ['CTO', 'Product'],
-                            ['CTO', 'Web'],
-                            ['CSO', 'Sales'],
-                            ['CMO', 'Market']
+                            ['Advisory Board', 'PI'],
+                            ['PI', 'CFO'],
+                            ['PI', 'Coordinator'],
+                            ['CFO', 'Web1'],
+                            ['CFO', 'Web2'],
+                            ['Coordinator', 'Product'],
+                            ['Coordinator', 'Curator1'],
+                            ['Coordinator', 'Curator2'],
+                            ['Product', 'Sales']
                         ],
-                        levels: [{
-                            level: 0,
-                            color: 'silver',
-                            dataLabels: {
-                                color: 'black'
+                        levels: [
+                            {
+                                level: 0,
+                                color: 'silver',
+                                dataLabels: {
+                                    color: 'black'
+                                },
+                                height: 25
                             },
-                            height: 25
-                        }, {
-                            level: 1,
-                            color: 'silver',
-                            dataLabels: {
-                                color: 'black'
+                            {
+                                level: 1,
+                                color: '#359154',
+                                height: 25
                             },
-                            height: 25
-                        }, {
-                            level: 2,
-                            color: '#980104'
-                        }, {
-                            level: 4,
-                            color: '#359154'
-                        }],
-                        nodes: [{
-                            id: 'Shareholders'
-                        }, {
-                            id: 'Board'
-                        }, {
-                            id: 'CEO',
-                            title: 'CEO',
-                            name: 'Grethe Hjetland',
-                            image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2018/11/12132317/Grethe.jpg'
-                        }, {
-                            id: 'HR',
-                            title: 'HR/CFO',
-                            name: 'Anne Jorunn Fjærestad',
-                            color: '#007ad0',
-                            image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2018/11/12132314/AnneJorunn.jpg',
-                            column: 3,
-                            offset: '75%'
-                        }, {
-                            id: 'CTO',
-                            title: 'CTO',
-                            name: 'Christer Vasseng',
-                            column: 4,
-                            image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2018/11/12140620/Christer.jpg',
-                            layout: 'hanging'
-                        }, {
-                            id: 'CPO',
-                            title: 'CPO',
-                            name: 'Torstein Hønsi',
-                            column: 4,
-                            image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2018/11/12131849/Torstein1.jpg'
-                        }, {
-                            id: 'CSO',
-                            title: 'CSO',
-                            name: 'Anita Nesse',
-                            column: 4,
-                            image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2018/11/12132313/Anita.jpg',
-                            layout: 'hanging'
-                        }, {
-                            id: 'CMO',
-                            title: 'CMO',
-                            name: 'Vidar Brekke',
-                            column: 4,
-                            image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2018/11/13105551/Vidar.jpg',
-                            layout: 'hanging'
-                        }, {
-                            id: 'Product',
-                            name: 'Product developers'
-                        }, {
-                            id: 'Web',
-                            name: 'General tech',
-                            description: 'Web developers, sys admin'
-                        }, {
-                            id: 'Sales',
-                            name: 'Sales team'
-                        }, {
-                            id: 'Market',
-                            name: 'Marketing team'
-                        }],
+                            {
+                                level: 2,
+                                color: '#E27D60'
+                            },
+                            {
+                                level: 3,
+                                color: '#27aae1'
+                            },
+                            {
+                                level: 4,
+                                color: '#27aae1'
+                            }
+                        ],
+                        nodes: [
+                            {
+                                id: 'Advisory Board'
+                            },
+                            {
+                                id: 'PI',
+                                title: 'Principal Investigator and Founder',
+                                name: 'Susanna-Assunta<br>Sansone',
+                                image: 'https://fairsharing.org/static/img/team/susanna.jpg'
+                            },
+                            {
+                                id: 'CFO',
+                                title: 'Co-Founder',
+                                name: 'Philippe Rocca-Serra',
+                                column: 2,
+                                image: 'https://fairsharing.org/static/img/team/phillipe.jpg',
+                                layout: 'hanging'
+                            },
+                                {
+                                id: 'Coordinator',
+                                title: 'Project Coordinator',
+                                name: 'Peter McQuilton',
+                                column: 2,
+                                image: 'https://fairsharing.org/static/img/team/pete.jpg',
+                                    layout: 'hanging'
+                            },
+                            {
+                                id: 'Product',
+                                title: 'Lead Research Software Engineer',
+                                name: 'Milo Thurston',
+                                image: 'https://fairsharing.org/static/img/team/milo.jpg',
+                                column: 3
+                            },
+                            {
+                                id: 'Curator1',
+                                title: 'Knowledge Engineer',
+                                name: 'Allyson Lister',
+                                image: 'https://fairsharing.org/static/img/team/allyson.jpg',
+                                column: 3
+                            },
+                            {
+                                id: 'Curator2',
+                                title: 'Curator (Contract)',
+                                name: 'Delphine Dauga',
+                                image: 'https://fairsharing.org/static/img/team/delphine.jpg',
+                                column: 3
+                            },
+                            {
+                                id: 'Web1',
+                                title: 'Research Software & Knowledge Engineer',
+                                name: 'Dominique Batista',
+                                image: 'https://fairsharing.org/static/img/team/dominique.jpg',
+                                column: 3
+                            },
+                            {
+                                id: 'Web2',
+                                title: 'Research Software Engineer',
+                                name: 'Massimiliano Izzo',
+                                image: 'https://fairsharing.org/static/img/team/massi.jpg',
+                                column: 3
+                            },
+                            {
+                                id: 'Sales',
+                                title: 'Research Software & Knowledge Engineer',
+                                name: 'Ramon Granell',
+                                image: 'https://fairsharing.org/static/img/team/ramon.jpg',
+                                column: 4
+                            },
+                            {
+                                id: 'Market',
+                                name: 'Marketing team'
+                            }
+                        ],
                         colorByPoint: false,
                         color: '#007ad0',
                         dataLabels: {
@@ -141,6 +160,9 @@
                         allowHTML: true,
                         sourceWidth: 800,
                         sourceHeight: 600
+                    },
+                    credits: {
+                        enabled: false
                     }
 
                 }
@@ -150,7 +172,6 @@
 </script>
 
 <style>
-
     #governance h4 {
         font-size: 1rem;
     }
