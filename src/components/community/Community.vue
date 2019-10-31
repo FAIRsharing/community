@@ -41,33 +41,32 @@
                         </div>
                     </div>
 
-                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Governance</h4>
+                    <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="card col-12">
+                                    <div class="card-header">
+                                        <h4>Governance</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <governance></governance>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <governance></governance>
+                            <div class="row">
+                                <div class="card col-12">
+                                    <div class="card-header">
+                                        <h4>Citing Us</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <cite-us></cite-us>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Citing Us</h4>
-                            </div>
-                            <div class="card-body">
-                                How to cite FAIRsharing.org in your articles, papers ...
-                            </div>
-                        </div>
-                    </div>
-
-
-
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -77,6 +76,7 @@
     import Adopter from './Adopter.vue'
     import Recommendation from './Recommendation.vue'
     import Governance from './Governance.vue'
+    import CiteUs from './CiteUs.vue'
 
     export default {
         name: "Community",
@@ -84,7 +84,8 @@
             Activity,
             Adopter,
             Recommendation,
-            Governance
+            Governance,
+            CiteUs
         }
     }
 </script>
@@ -121,6 +122,10 @@
 
     .card-header {
         padding: 5px 10px;
+    }
+
+    .row {
+        margin-bottom:30px;
     }
 
 </style>

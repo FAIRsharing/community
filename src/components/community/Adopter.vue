@@ -35,7 +35,7 @@
                                  :key="'item_' + item.name"
                                  style="margin-bottom:20px;">
 
-                                <div class="card" v-bind:class="{'orange': item.text === 'Policy'}">
+                                <div class="card organization" v-bind:class="{'orange': item.text === 'Policy'}">
                                     <div class="card-body">
                                         <div class="logoZone">
                                             <img :src="item.logo" class="logo">
@@ -212,6 +212,7 @@
     .card {
         border: 3px solid #27aae1;
         height:100%;
+        box-shadow: 0 0 #ccc;
     }
 
     .card-body{
@@ -224,14 +225,16 @@
         text-align: center;
         font-size: 1.1rem;
         padding:0 10px;
+        margin-bottom: auto;
     }
 
     .textZone {
         text-align: center;
         margin: 10px 0;
-        padding:0 10px;
+        padding:5px 10px;
         position: relative;
         background-color: #27aae1;
+        color:white;
     }
 
     .leftCol {
@@ -245,9 +248,28 @@
     .orange .title {
         color: #E27D60;
     }
-
     .orange .textZone {
         background-color: #E27D60;
+    }
+
+    .green {
+        border-color: #359154;
+    }
+
+    .green .title {
+        color: #359154;
+    }
+    .green .textZone {
+        background-color: #359154;
+    }
+
+    .organization {
+        position: relative;
+    }
+
+    .organization .card-body {
+        display: flex;
+        flex-direction: column;
     }
 
 </style>

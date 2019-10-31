@@ -87,7 +87,7 @@
     }
 
     img{
-        width:80%;
+        width:100%;
         transition: all 0.5s;
     }
 
