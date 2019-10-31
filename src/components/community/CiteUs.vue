@@ -2,13 +2,18 @@
     <div class="citeUs">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3 imageZone">
+                <div class="col-12 imageZone">
                     <img src="../../assets/community/fairsharing_paper.jpg">
                 </div>
-                <div class="col-9">
+                <div class="col-12">
                     <p class="title">
                         <span>“FAIRsharing as a community approach to standards, repositories and policies”</span>
-                        <br> OPEN CC-BY.</p>
+                        <br> OPEN CC-BY.
+                    </p>
+                    <hr>
+                </div>
+
+                <div class="col-12 textZone">
                     <p>
                         Authored by 68 international authors representing different stakeholder groups:
                     (i) researchers in academia, industry and government,
@@ -26,6 +31,7 @@
                     adoption of standards, databases and repositories within their community and in data policies.
                     </p>
                 </div>
+
             </div>
 
         </div>
@@ -53,6 +59,19 @@
     .imageZone {
         display: flex;
         align-items: center;
+        justify-content: center;
+    }
+
+    .imageZone {
+        margin-bottom: 20px;
+    }
+
+    .textZone {
+        text-align: justify;
+    }
+
+    hr {
+        margin-bottom:30px;
     }
 
 </style>

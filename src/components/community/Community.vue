@@ -44,22 +44,22 @@
                     <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="card col-12">
-                                    <div class="card-header">
-                                        <h4>Governance</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <governance></governance>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="card col-12">
+                                <div class="card col-3">
                                     <div class="card-header">
                                         <h4>Citing Us</h4>
                                     </div>
                                     <div class="card-body">
                                         <cite-us></cite-us>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="card govCard">
+                                        <div class="card-header">
+                                            <h4>Governance</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <governance></governance>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -126,6 +126,10 @@
 
     .row {
         margin-bottom:30px;
+    }
+
+    .govCard {
+        height:100%;
     }
 
 </style>
