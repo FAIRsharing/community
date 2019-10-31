@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4"
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3"
                                  v-for="item in gridItems"
                                  :key="'item_' + item.name"
                                  style="margin-bottom:20px;">
@@ -156,6 +156,18 @@
                         link: 'https://fairsharing.org/recommendation/PLOS'
                     },
                     {
+                        name: "Springer Nature BioMed Central",
+                        logo: require('../../assets/community/logo_biomed_central.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/BMC'
+                    },
+                    {
+                        name: "Springer Nature Scientific Data",
+                        logo: require('../../assets/community/SciData_logo.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/TaylorandFrancis'
+                    },
+                    {
                         name: "Taylor and Francis",
                         logo: require('../../assets/community/taylor_francis.png'),
                         text: 'Recommendation',
@@ -165,12 +177,6 @@
                         name: "Wiley",
                         logo: require('../../assets/community/wiley_logo.png'),
                         text: 'Policy',
-                        link: 'https://fairsharing.org/recommendation/TaylorandFrancis'
-                    },
-                    {
-                        name: "Springer Nature Scientific Data",
-                        logo: require('../../assets/community/SciData_logo.png'),
-                        text: 'Recommendation',
                         link: 'https://fairsharing.org/recommendation/TaylorandFrancis'
                     }
                 ]
@@ -199,14 +205,14 @@
     }
 
     .logoZone img{
-        height: 70px;
-        width:80%;
+        height:60px;
+        width: 120px;
         transition: all 0.5s;
     }
 
     .logoZone img:hover{
-        height:100px;
-        width: 100%;
+        height:70px;
+        width: 80%;
     }
 
     .card {
