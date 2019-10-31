@@ -20,14 +20,21 @@
                     </div>
 
                     <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Adopters</h4>
-                            </div>
-                            <div class="card-body">
-                                <adopter></adopter>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4>Adopters</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <adopter></adopter>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
@@ -44,15 +51,17 @@
                     <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="card col-3">
-                                    <div class="card-header">
-                                        <h4>Citing Us</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <cite-us></cite-us>
+                                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4>Citing Us</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <cite-us></cite-us>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-9">
+                                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
                                     <div class="card govCard">
                                         <div class="card-header">
                                             <h4>Governance</h4>
@@ -62,6 +71,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -129,7 +139,7 @@
     }
 
     .govCard {
-        height:100%;
+        margin-top: 20px;
     }
 
 </style>

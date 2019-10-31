@@ -58,7 +58,7 @@
             return {
                 chartOptions: {
                     chart: {
-                        height:  '50%',
+                        height:  '30%',
                         plotBackgroundColor: '#f8f8f8',
                         backgroundColor: '#f8f8f8',
                         plotBorderWidth: 0,
@@ -166,6 +166,7 @@
                                 name: 'Massimiliano Izzo',
                                 image: 'https://fairsharing.org/static/img/team/massi.jpg',
                                 column: 2,
+                                width: 220
                             },
                             {
                                 id: 'Sales',
@@ -204,6 +205,9 @@
 
 <style>
 
+    #governance, .shadowBox {
+        max-height: 600px;
+    }
 
     #governance h4 {
         font-size: 1rem;

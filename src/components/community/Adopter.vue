@@ -202,6 +202,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 20px;
     }
 
     .logoZone img{
@@ -211,7 +212,7 @@
     }
 
     .logoZone img:hover{
-        height:70px;
+        height:80%;
         width: 80%;
     }
 
