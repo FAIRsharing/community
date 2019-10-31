@@ -91,7 +91,7 @@
                             },
                             {
                                 level: 1,
-                                color: '#E27D60'
+                                color: '#e67e22'
                             },
                             {
                                 level: 2,

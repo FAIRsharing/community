@@ -25,7 +25,7 @@
         data() {
             return {
                 chartOptions: {
-                    colors: ['#E27D60', '#27aae1', '#359154'],
+                    colors: ['#e67e22', '#27aae1', '#359154'],
                     chart: {
                         plotBackgroundColor: '#f8f8f8',
                         plotBorderWidth: 0,

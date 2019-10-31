@@ -65,7 +65,7 @@
         data() {
             return {
                 chartOptions: {
-                    colors: ['#E27D60', '#27aae1', '#98bfcc'],
+                    colors: ['#e67e22', '#27aae1', '#98bfcc'],
                     chart: {
                         type: 'column',
                         plotBackgroundColor: 'white',
@@ -248,14 +248,14 @@
     }
 
     .orange {
-        border-color:#E27D60;
+        border-color:#e67e22;
     }
 
     .orange .title {
-        color: #E27D60;
+        color: #e67e22;
     }
     .orange .textZone {
-        background-color: #E27D60;
+        background-color: #e67e22;
     }
 
     .green {

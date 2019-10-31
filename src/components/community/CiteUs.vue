@@ -16,19 +16,20 @@
                 <div class="col-12 textZone">
                     <p>
                         Authored by 68 international authors representing different stakeholder groups:
-                    (i) researchers in academia, industry and government,
-                    (ii) scholarly publishers,
-                    (iii) funders and other data policy makers,
-                    (iv) research data facilitators, librarians and trainers,
-                    (v) infrastructure providers, developers and curators of resources; and
-                        (vi) learned societies, unions and associations.
                     </p>
-
+                    <ol>
+                        <li>researchers in academia, industry and government,</li>
+                        <li>scholarly publishers,</li>
+                        <li>funders and other data policy makers,</li>
+                        <li>research data facilitators, librarians and trainers,</li>
+                        <li>infrastructure providers, developers and curators of resources; and</li>
+                        <li>learned societies, unions and associations</li>
+                    </ol>
                     <p>
                         We have come together as a community, representing the core adopters, advisory board members,
-                    and/or key collaborators of FAIRsharing to present its mission and work, and show the role
-                    FAIRsharing plays in informing and educating each stakeholder group to maximize the visibility and
-                    adoption of standards, databases and repositories within their community and in data policies.
+                        and/or key collaborators of FAIRsharing to present its mission and work, and show the role
+                        FAIRsharing plays in informing and educating each stakeholder group to maximize the visibility and
+                        adoption of standards, databases and repositories within their community and in data policies.
                     </p>
                 </div>
 
