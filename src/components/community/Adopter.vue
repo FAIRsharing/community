@@ -34,7 +34,8 @@
                                  v-for="item in gridItems"
                                  :key="'item_' + item.name"
                                  style="margin-bottom:20px;">
-                                <div class="card">
+
+                                <div class="card" v-bind:class="{'orange': item.text === 'Policy'}">
                                     <div class="card-body">
                                         <div class="logoZone">
                                             <img :src="item.logo" class="logo">
@@ -43,10 +44,7 @@
                                             <div>{{item.name}}</div>
                                         </div>
                                         <div class="textZone">
-                                            <div>
-                                                - <br>
-                                                {{item.text}}
-                                            </div>
+                                            {{item.text}}
                                         </div>
                                     </div>
                                 </div>
@@ -230,12 +228,26 @@
 
     .textZone {
         text-align: center;
-        margin-bottom: 10px;
+        margin: 10px 0;
         padding:0 10px;
+        position: relative;
+        background-color: #27aae1;
     }
 
     .leftCol {
         margin-bottom: 20px;
+    }
+
+    .orange {
+        border-color:#E27D60;
+    }
+
+    .orange .title {
+        color: #E27D60;
+    }
+
+    .orange .textZone {
+        background-color: #E27D60;
     }
 
 </style>
