@@ -186,6 +186,12 @@
                         link: 'https://fairsharing.org/recommendation/TaylorandFrancis'
                     },
                     {
+                        name: "Wellcome Open Research",
+                        logo: require('../../assets/community/wellcome_bw.png'),
+                        text: 'Recommendation',
+                        link: 'https://fairsharing.org/recommendation/WellcomeOpenResearch'
+                    },
+                    {
                         name: "Wiley",
                         logo: require('../../assets/community/wiley_logo.png'),
                         text: 'Policy',
