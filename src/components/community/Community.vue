@@ -11,12 +11,13 @@
                     <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Activities</h4>
+                                <h4>Recommendations</h4>
                             </div>
                             <div class="card-body">
-                                <activity></activity>
+                                <recommendation></recommendation>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
@@ -40,10 +41,10 @@
                     <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Recommendations</h4>
+                                <h4>Activities</h4>
                             </div>
                             <div class="card-body">
-                                <recommendation></recommendation>
+                                <activity></activity>
                             </div>
                         </div>
                     </div>

@@ -3,49 +3,57 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 leftCol">
-                    <div class="text">
-                        Anyone can use FAIRsharing. Adopters, however, use FAIRsharing specifically to:
-                        <ol>
-                            <li>Educate their users/community on the variety of existing standards, repositories and policies, and actively encourage them to submit/claim records, where relevant;</li>
-                            <li>Create Recommendations by registering their data policy, and then link it to standards and/or databases recommended in the policy; and/or</li>
-                            <li>Create a Collection by pulling together a list of standards and/or databases around a given domain of interest relevant to them.</li>
-                        </ol>
-                        Here are the instructions for record creation.<br>
-                        Adopters are generally representatives of institutions, libraries, journal publishers,
-                        infrastructure programmes, societies and other organizations or projects that in turn serve and guide individual
-                        researchers or other stakeholders on research data management matters.<br>
-                        Adopters have a FAIRsharing logo on their websites with a link from their website to our homepage.<br>
-                    </div>
-                    <div class="graph">
-                        <highcharts :options="chartOptions" class="shadowBox chartMin"></highcharts>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
-                    <div class="grid container-fluid">
+                <div class="col-12 leftCol">
+                    <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12" style="text-align: center;">
-                                <b>We cannot list all of our adopters, but list here those publishers that use FAIRsharing to define and refine their data policy.</b>
-                                <hr>
+                            <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
+                                <div class="text">
+                                    Anyone can use FAIRsharing. Adopters, however, use FAIRsharing specifically to:
+                                    <ol>
+                                        <li>Educate their users/community on the variety of existing standards, repositories and policies, and actively encourage them to submit/claim records, where relevant;</li>
+                                        <li>Create Recommendations by registering their data policy, and then link it to standards and/or databases recommended in the policy; and/or</li>
+                                        <li>Create a Collection by pulling together a list of standards and/or databases around a given domain of interest relevant to them.</li>
+                                    </ol>
+                                    Here are the instructions for record creation.<br>
+                                    Adopters are generally representatives of institutions, libraries, journal publishers,
+                                    infrastructure programmes, societies and other organizations or projects that in turn serve and guide individual
+                                    researchers or other stakeholders on research data management matters.<br>
+                                    Adopters have a FAIRsharing logo on their websites with a link from their website to our homepage.<br>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
+                                <div class="graph">
+                                    <highcharts :options="chartOptions" class="shadowBox chartMin"></highcharts>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3"
-                                 v-for="item in gridItems"
-                                 :key="'item_' + item.name"
-                                 style="margin-bottom:20px;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="grid container-fluid">
+                    <div class="row">
+                        <div class="col-12" style="text-align: center;">
+                            <b>We cannot list all of our adopters, but list here those publishers that use FAIRsharing to define and refine their data policy.</b>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-2"
+                             v-for="item in gridItems"
+                             :key="'item_' + item.name"
+                             style="margin-bottom:20px;">
 
-                                <div class="card organization" v-bind:class="{'orange': item.text === 'Policy'}">
-                                    <div class="card-body">
-                                        <div class="logoZone">
-                                            <img :src="item.logo" class="logo">
-                                        </div>
-                                        <div class="title">
-                                            <div>{{item.name}}</div>
-                                        </div>
-                                        <div class="textZone">
-                                            {{item.text}}
-                                        </div>
+                            <div class="card organization" v-bind:class="{'orange': item.text === 'Policy'}">
+                                <div class="card-body">
+                                    <div class="logoZone">
+                                        <img :src="item.logo" class="logo">
+                                    </div>
+                                    <div class="title">
+                                        <div>{{item.name}}</div>
+                                    </div>
+                                    <div class="textZone">
+                                        {{item.text}}
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +62,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -65,7 +72,6 @@
         data() {
             return {
                 chartOptions: {
-                    colors: ['#e67e22', '#27aae1', '#98bfcc'],
                     chart: {
                         type: 'column',
                         plotBackgroundColor: 'white',
@@ -100,17 +106,23 @@
                     },
                     plotOptions: {
                         series: {
-                            pointWidth: 30
+                            pointWidth: 40,
+                            pointPadding: 0.1,
+                            column: {
+                                stacking: 'normal'
+                            }
                         }
                     },
                     series: [
                         {
                             name: 'Databases',
-                            data: [72,24,47,42,84,0,101,9,48]
+                            data: [72,24,47,42,84,0,101,9,48],
+                            stack: 0
                         },
                         {
                             name: 'Standards',
-                            data: [3,9,6,15,1,2,11,1,6]
+                            data: [3,9,6,15,1,2,11,1,6],
+                            stack: 1
                         }/*,
                         {
                             name: 'Policy',

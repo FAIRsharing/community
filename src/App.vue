@@ -10,6 +10,24 @@
 <script>
 import topBar from './components/topBar.vue'
 import Community from './components/community/Community.vue'
+import Highcharts from 'highcharts'
+
+let customColors = ['#e67e22', '#27aae1', '#359154'];
+Highcharts.setOptions({
+    colors: Highcharts.map(customColors, function (color) {
+        return {
+            radialGradient: {
+                cx: 0.5,
+                cy: 0.3,
+                r: 0.7
+            },
+            stops: [
+                [0, color],
+                [1, Highcharts.Color(color).brighten(-0.2).get('rgb')] // darken
+            ]
+        };
+    })
+});
 
 export default {
   name: 'app',
