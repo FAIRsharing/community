@@ -9,28 +9,24 @@
                 <div class="row">
 
                     <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Recommendations</h4>
-                            </div>
-                            <div class="card-body">
-                                <recommendation></recommendation>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4>Adopters</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <adopter></adopter>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Recommendations</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <recommendation></recommendation>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Citing Us</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <cite-us></cite-us>
                                     </div>
                                 </div>
                             </div>
@@ -38,8 +34,19 @@
 
                     </div>
 
-                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
+                    <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
                         <div class="card">
+                            <div class="card-header">
+                                <h4>Adopters</h4>
+                            </div>
+                            <div class="card-body">
+                                <adopter></adopter>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
+                        <div class="card" style="height:100%">
                             <div class="card-header">
                                 <h4>Activities</h4>
                             </div>
@@ -50,29 +57,12 @@
                     </div>
 
                     <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4>Citing Us</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <cite-us></cite-us>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
-                                    <div class="card govCard">
-                                        <div class="card-header">
-                                            <h4>Governance</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <governance></governance>
-                                        </div>
-                                    </div>
-                                </div>
-
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Governance</h4>
+                            </div>
+                            <div class="card-body">
+                                <governance></governance>
                             </div>
                         </div>
                     </div>

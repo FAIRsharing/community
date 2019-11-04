@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>
+        <p class="text">
             FAIRsharing is not just a registry. The team behind FAIRsharing is involved in a number of
             FAIR-enabling activities, delivering guidance, tools and services with and for a variety of stakeholders.
             As these activities mature, we will implement them in, or connect them to, the FAIRsharing resource itself. <br>
@@ -117,5 +117,7 @@
 </script>
 
 <style scoped>
-
+    p.text {
+        text-align: justify;
+    }
 </style>
