@@ -12,9 +12,9 @@ import Organization from 'highcharts/modules/organization'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 
-import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import 'bootstrap/scss/bootstrap.scss'
+import './test.scss'
 
 Variablepie(Highcharts);
 More(Highcharts);
@@ -22,10 +22,8 @@ Sankey(Highcharts);
 Organization(Highcharts);
 Export(Highcharts);
 
-
 Vue.use(VueMaterial);
 Vue.use(HighchartsVue);
-Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 
