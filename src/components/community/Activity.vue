@@ -409,6 +409,25 @@
         background-color: #359154;
     }
 
+    .change .activity .card-header {
+        color: #e67e22;
+    }
+    .build .activity .card-header {
+        color: #27aae1;
+    }
+    .train .activity .card-header {
+        color: #359154;
+
+    }
+
+    .change .activity .card-header,
+    .build .activity .card-header,
+    .train .activity .card-header {
+        font-weight: bolder;
+        font-size: 1.1rem;
+    }
+
+
     /*
     .btn-green, .btn-orange,.btn-blue {
         position: relative;
