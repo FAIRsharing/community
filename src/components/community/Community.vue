@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Recommendations</h4>
+                                        <h4>Recommended in the literature</h4>
                                     </div>
                                     <div class="card-body">
                                         <recommendation></recommendation>
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="colMargin col-lg-12 col-xl-12 col-sm-12 col-md-12">
-                        <div class="card">
+                        <div class="card" style="margin-top:30px;">
                             <div class="card-header">
                                 <h4>Governance</h4>
                             </div>

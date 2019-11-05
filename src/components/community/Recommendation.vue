@@ -40,28 +40,28 @@
                         quote: "Turning FAIR into reality",
                         link: "",
                         logo: require('../../assets/community/fair_into_reality.png'),
-                        text: ''
+                        text: 'The Final report and action plan from the European Commission expert group on FAIR data (2018).'
                     },
                     {
                         name: "European Research Council (ERC)",
                         quote: "Open Research Data and Data Management Plans",
                         link: "",
                         logo: require('../../assets/community/erc.png'),
-                        text: ''
+                        text: 'Information for ERC grantees from the ERC Scientific Council (2018).'
                     },
                     {
                         name: "EUK Jisc",
                         quote: "FAIR in practice",
                         link: "",
                         logo: require('../../assets/community/fair_in_practice.png'),
-                        text: 'Identified 16 key drivers to FAIRification divided in four categories (political, economical, social and technological) and seven recommendations for FAIR support'
+                        text: 'This report (2018) explores FAIR with stakeholders in the UK academic research community. Its aims were to understand how using or being inspired by these principles improves the findability, accessibility, interoperability and reuse of research data, including consideration of disciplinary differences.'
                     },
                     {
                         name: "Science Europe",
                         quote: "Framework for Discipline-specific Research Data Management",
                         link: "",
                         logo: require('../../assets/community/science_europe_guidance.png'),
-                        text: 'Participation in development of Data Domain Protocol (DDP) for Data Management Plan (DMP). Recommands FAIRsharing.org as the metadata and standards registry for life-sciences'
+                        text: 'This report (2018) presents a framework for the creation of domain-specific protocols that can be used as standardised templates, reducing the administrative burden on both researchers, research organisations, and funders.'
                     }
                 ]
             }
