@@ -53,7 +53,7 @@
 
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12" v-for="(activity, key, index) in dataVal.items" :key="'activity'+index">
+                                        <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12" v-for="(activity, key, index) in dataVal.items" :key="'activity'+index">
                                             <div class="card activity">
 
                                                 <div class="card-header">{{key}}</div>

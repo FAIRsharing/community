@@ -24,7 +24,7 @@
                         </h6>
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="column col-lg-4 col-xl-4 col-md-6 col-sm-6"
+                                <div class="column col-lg-6 col-xl-6 col-xxl-4 col-md-4 col-sm-6"
                                      v-for="(member, index) in team"
                                      :key="'member'+index">
                                     <div class="card person"
@@ -57,11 +57,11 @@
                         </h6>
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="column col-lg-2 col-xl-2 col-md-6 col-sm-6"
+                                <div class="column col-lg-3 col-xl-2 col-md-4 col-sm-6"
                                      v-for="(memberVal, memberName, index) in getBoard"
                                      :key="'advisoryMember'+index">
                                     <div class="card person">
-                                        <div class="card-body">
+                                        <div class="card-body textZone">
                                             <div class="name" v-html="memberName"></div>
                                             <hr class="white">
                                             <div class="role" v-html="memberVal"></div>
@@ -350,6 +350,12 @@
 
     .column {
         margin-bottom:20px;
+    }
+
+    .textZone {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
 </style>

@@ -12,9 +12,8 @@ import Organization from 'highcharts/modules/organization'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 
-
 import 'bootstrap/scss/bootstrap.scss'
-import './test.scss'
+import './breakpoints.scss'
 
 Variablepie(Highcharts);
 More(Highcharts);
