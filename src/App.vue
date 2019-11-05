@@ -49,7 +49,7 @@ export default {
   body {
     margin:0;
     font-family: "Lato", sans-serif !important;
-    font-size: 0.8rem !important;
+    font-size: 1rem !important;
   }
 
   nav .row {

@@ -10,7 +10,7 @@
 
                 <div class="container-fluid card-body">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-3 logoZone">
                             <img :src="item.logo" class="logo">
                         </div>
                         <div class="col-9">
@@ -19,7 +19,7 @@
                                 <hr>
                                 <span class="quote">"{{item.quote}}"</span>
                             </h5>
-                            {{item.text}}
+                            <div class="itemText">{{item.text}}</div>
                         </div>
                     </div>
                 </div>
@@ -81,6 +81,10 @@
         margin-top:20px;
     }
 
+    .grid {
+        padding:0 20px 20px 20px;
+    }
+
     h5 {
         text-align: center;
         font-size: 1.2rem;
@@ -94,6 +98,16 @@
     .quote {
         font-size: 1rem;
         color:#27aae1;
+    }
+
+    .itemText {
+        margin-bottom:20px;
+    }
+
+    .logoZone {
+        display:flex;
+        align-items: center;
+        justify-content: center;
     }
 
 </style>

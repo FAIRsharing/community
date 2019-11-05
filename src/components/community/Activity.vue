@@ -1,80 +1,87 @@
 <template>
-    <div>
-        <p class="text">
-            FAIRsharing is not just a registry. The team behind FAIRsharing is involved in a number of
-            FAIR-enabling activities, delivering guidance, tools and services with and for a variety of stakeholders.
-            As these activities mature, we will implement them in, or connect them to, the FAIRsharing resource itself. <br>
-            Some of these activities are part of funded projects andas part of national or international consortia,
-            while others are volunteer efforts that fall under a variety of umbrella organisations, e.g. working groups
-            (WG) and learned societies.<br>
-            Our activities, classified using the three GO-FAIR pillar structures (change, build, train), are outlined here.
-        </p>
+    <div class="container-fluid">
 
-        <highcharts :options="chartOptions" class="shadowBox chartMin"></highcharts>
+        <div class="row">
 
-        <div class="container-fluid activityDetails">
-            <div class="row tabRow">
-                <div class="col-12">
-                    <ul class="nav">
-                        <li class="nav-item"
-                            v-for="tab in getTabs"
-                            :key="'tab_'+tab">
-                            <button class="btn active"
-                                    v-on:click="currentDisplay = tab"
-                                    v-bind:class="currentDisplay">
-                                {{tab}}
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-12">
+                <p class="text">
+                    FAIRsharing is not just a registry. The team behind FAIRsharing is involved in a number of
+                    FAIR-enabling activities, delivering guidance, tools and services with and for a variety of stakeholders.
+                    As these activities mature, we will implement them in, or connect them to, the FAIRsharing resource itself. <br>
+                    Some of these activities are part of funded projects andas part of national or international consortia,
+                    while others are volunteer efforts that fall under a variety of umbrella organisations, e.g. working groups
+                    (WG) and learned societies.<br>
+                    Our activities, classified using the three GO-FAIR pillar structures (change, build, train), are outlined here.
+                </p>
+                <highcharts :options="chartOptions" class="shadowBox chartMin"></highcharts>
             </div>
 
-            <div class="row textRow">
-                <div v-for="(dataVal, dataKey) in gridData"
-                     :key="'text_' + dataKey"
-                     v-bind:class="currentDisplay">
+            <div class="col-lg-8 col-xl-8 col-sm-12 col-md-12">
 
-                    <div v-if="dataKey === currentDisplay">
-                        <div class="activitySubTitle">
-                            <span class="text-uppercase">{{dataKey}}</span> - {{dataVal.description}}
-                        </div>
+                <!-- NAVIGATION -->
+                <div class="container-fluid activityDetails">
+                    <div class="row tabRow">
+                        <ul class="nav">
+                            <li class="nav-item"
+                                v-for="tab in getTabs"
+                                :key="'tab_'+tab" v-bind:class="currentDisplay">
+                                <button class="btn active"
+                                        type="button"
+                                        v-on:click="currentDisplay = tab"
+                                        v-bind:class="{
+                                            currentDisplay,
+                                            'btn-orange': tab === 'change',
+                                            'btn-blue': tab === 'build',
+                                            'btn-green': tab === 'train'}">
+                                    {{tab}}
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="row textRow" v-bind:class="currentDisplay">
+                        <div v-for="(dataVal, dataKey) in gridData"
+                             :key="'text_' + dataKey"
+                             v-bind:class="currentDisplay">
+
+                            <div v-if="dataKey === currentDisplay">
+                                <div class="activitySubTitle">
+                                    <span class="text-uppercase">{{dataKey}}</span> - {{dataVal.description}}
+                                </div>
 
 
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-6" v-for="(activity, key, index) in dataVal.items" :key="'activity'+index">
-                                    <div class="card activity">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12" v-for="(activity, key, index) in dataVal.items" :key="'activity'+index">
+                                            <div class="card activity">
 
-                                        <div class="card-header">{{key}}</div>
-                                        <div class="card-body">
-                                            <div class="card no-border" v-for="(itemVal, subIndex) in activity" :key="'activityDescription'+subIndex">
-
-                                                <div class="description" v-html="itemVal.description"> </div>
-
-                                                <div class="organizations container-fluid">
-                                                    <div class="row">
-                                                        <div class="label">Organizations: </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-6"
-                                                             v-for="(organization, index) in itemVal.organization" :key="'organization'+index">
-                                                                <div class="organization" v-html="organization">
-                                                                </div>
+                                                <div class="card-header">{{key}}</div>
+                                                <div class="card-body">
+                                                    <div class="card no-border" v-for="(itemVal, subIndex) in activity" :key="'activityDescription'+subIndex">
+                                                        <hr v-if="subIndex > 0">
+                                                        <div class="organizations">
+                                                            <div class="label">Organizations: </div>
+                                                            <div v-for="(organization, index) in itemVal.organization"
+                                                                 :key="'organization'+index"
+                                                                 class="organization"
+                                                                 v-html="organization">
+                                                            </div>
                                                         </div>
+                                                        <div class="description" v-html="itemVal.description"> </div>
                                                     </div>
                                                 </div>
-                                                {{index}}
-                                                <hr v-if="subIndex !== Object.keys(itemVal).length - 1">
+
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -179,7 +186,7 @@
                     }]
                 },
                 gridData: {
-                        change: {
+                    change: {
                             description: "focusing on priorities, policies and incentives for implementing FAIR",
                             items: {
                                 "1. FAIR maturity indicators, metrics and models": [
@@ -246,13 +253,102 @@
                             }
                     },
                     build: {
-                        description: "focussing on the technology needed to enable FAIR ",
+                        description: "focussing on the technology needed to enable FAIR",
                         items: {
                             "5. Domain and subject terminologies for data classification": [
-                            ]
+                                {
+                                    description:
+                                    "We have developed and maintain two terminologies: the Subject Resource Application " +
+                                    "Ontology (SRAO) describing subject areas / academic disciplines and the Domain " +
+                                    "Resource Application Ontology (DRAO) describing cross-discipline research domains. " +
+                                    "These are used by the FAIRsharing curators and the users to describe and classify" +
+                                    " standards, repositories and polices. ",
+                                    organization: [
+                                        "FAIRsharing team"
+                                    ],
+                                    projects : [
+                                        "<a href='https://wellcome.ac.uk/funding/people-and-projects/grants-awarded/the-fairsharing-service-supporting-research-lifecycle' target='_blank'>Wellcome Trust</a>"
+                                    ]
+                                }
+                            ],
+                            "6. Future-proofing the FAIRsharing technical architecture": [
+                                {
+                                    description:
+                                    "To adapt and improve the FAIRsharing data model to accurate reflect and respond to " +
+                                    "community requirements. To update and refactor FAIRsharing code to facilitate improved " +
+                                    "data visualisation and access and to respond to user requirements. ",
+                                    organization: [
+                                        "FAIRsharing team",
+                                        "International Advisory Board"
+                                    ],
+                                    projects : [
+                                        "<a href='https://wellcome.ac.uk/funding/people-and-projects/grants-awarded/the-fairsharing-service-supporting-research-lifecycle' target='_blank'>Wellcome Trust</a>"
+                                    ]
+                                }
+                            ],
+                            "7. FAIR assessment tools": [
+                                {
+                                    description:
+                                    "FAIRshake: a prototype software to assess the FAIRness of bioinformatics tools, " +
+                                    "analyses, and biological datasets against a variety of different metrics that can " +
+                                    "be uploaded in the tool. FAIRsharing is a core element of this work. ",
+                                    organization: [
+                                        "FAIRSharing team",
+                                        "<a href='https://commonfund.nih.gov/commons' target=''>NIH Data Commons teams</a>",
+                                    ],
+                                    projects: [
+                                        "NIH FAIR Data Commons Consortium"
+                                    ]
+                                },
+                                {
+                                    description: "FAIR Evaluator: a software to register and execute tests of compliance " +
+                                    "with the published FAIR Metrics. FAIRsharing is a core element of this work. " +
+                                    "<a href='https://w3id.org/AmIFAIR' target='_blank'>Pre-print of this work.</a>",
+                                    organization: [
+                                        "<a href='' target='_blank'>GO-FAIR OPEDAS IN</a>",
+                                        "<a href='' target='_blank'>GO-FAIR StRePo IN</a>",
+                                        "<a href='' target='_blank'>FAIR Metrics WG</a>"
+                                    ]
+                                }
+                            ],
                         }
                     },
-                    train: {}
+                    train: {
+                        description: "focussing on FAIR awareness and skills development",
+                        items: {
+                            "11. Guidance to stakeholders ": [
+                                {
+                                    description:
+                                    "We are developing <b>FAIRassist</b>, a tool to navigate and select standards, repositories " +
+                                    "and other digital objects to guide researchers, data managers and other data " +
+                                    "producers and consumers to improve the FAIRness of their data. ",
+                                    organization: [
+                                        "FAIRsharing team"
+                                    ],
+                                    projects : [
+                                        "<a href='https://twitter.com/EoscLife' target='_blank'>EU INFRA EOSC-Life</a>"
+                                    ]
+                                }
+                            ],
+                            "12. FAIR competencies and curricula ": [
+                                {
+                                    description:
+                                    "Working with the community, including GO-FAIR, CODATA, the RDA and others, we are " +
+                                    "building infrastructure in training and teaching to enable both a competency or " +
+                                    "skills framework and a generic teaching curriculum. ",
+                                    organization: [
+                                        "GO-FAIR Training",
+                                        "CODATA",
+                                        "FAIRsFAIR",
+                                        "GO-FAIR StRePo IN;"
+                                    ],
+                                    projects : [
+                                        "<a href='https://wellcome.ac.uk/funding/people-and-projects/grants-awarded/the-fairsharing-service-supporting-research-lifecycle' target='_blank'>Wellcome Trust</a>"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
                 },
                 currentDisplay: 'change'
             }
@@ -272,6 +368,7 @@
 <style scoped>
     p.text {
         text-align: justify;
+        margin: 60px 0;
     }
 
     .activityDetails {
@@ -300,12 +397,38 @@
         width:100%;
     }
 
-    .change .activitySubTitle, .change .organization {
+    .change .activitySubTitle, .change .organization, .btn-orange {
         background-color: #e67e22;
     }
 
-    .build .activitySubTitle {
+    .build .activitySubTitle, .build .organization, .btn-blue {
         background-color: #27aae1;
+    }
+
+    .train .activitySubTitle, .train .organization, .btn-green {
+        background-color: #359154;
+    }
+
+    /*
+    .btn-green, .btn-orange,.btn-blue {
+        position: relative;
+        top:2px;
+    }*/
+
+    .btn-green:focus, .btn-orange:focus, .btn-blue:focus {
+        box-shadow:0 0 !important;
+    }
+
+    .textRow.change {
+        border:2px solid #bf6516;
+    }
+
+    .textRow.build {
+        border:2px solid #1a8bbb;
+    }
+
+    .textRow.train {
+        border:2px solid #276c3e;
     }
 
     .no-border {
@@ -324,19 +447,51 @@
 
     .organizations {
         margin-top:10px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .organization {
-        padding: 10px;
-        border-radius: 20px 0 20px 0;
+        padding: 7px 10px;
+        border-radius: 20px;
         text-align: center;
+        font-size: 0.8rem;
+        margin-left:20px;
+        margin-top:10px;
     }
 
     .label {
-        margin-bottom: 10px;
         font-weight: bolder;
         text-decoration: underline;
+        margin-top:10px;
     }
+
+    .description {
+        margin-top:10px;
+    }
+
+    .nav-item{
+        border-bottom: 0;
+        width:auto !important;
+    }
+
+    .nav-item button {
+        width:100%;
+        padding-left:30px;
+        padding-right:30px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        color:white;
+        font-weight: bolder;
+        min-width:150px;
+    }
+
+    .nav-item.change {}
+    .nav-item.build {}
+    .nav-item.train {}
 
 </style>
 

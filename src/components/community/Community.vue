@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
-                        <div class="card">
+                        <div class="card fullHeight">
                             <div class="card-header">
                                 <h4>Adopters</h4>
                             </div>
@@ -45,8 +45,8 @@
                         </div>
                     </div>
 
-                    <div class="colMargin col-lg-4 col-xl-4 col-sm-12 col-md-12">
-                        <div class="card" style="height:100%">
+                    <div class="colMargin col-lg-12 col-xl-12 col-sm-12 col-md-12">
+                        <div class="card">
                             <div class="card-header">
                                 <h4>Activities</h4>
                             </div>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="colMargin col-lg-8 col-xl-8 col-sm-12 col-md-12">
+                    <div class="colMargin col-lg-12 col-xl-12 col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Governance</h4>
@@ -131,6 +131,10 @@
 
     .govCard {
         margin-top: 20px;
+    }
+
+    .fullHeight {
+        min-height:97.8%;
     }
 
 </style>

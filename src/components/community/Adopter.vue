@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 leftCol">
@@ -214,6 +213,7 @@
         border:1px solid #ccc;
         box-shadow: 3px 3px #ccc;
         padding:10px;
+        margin-top:20px;
     }
 
     .logoZone{

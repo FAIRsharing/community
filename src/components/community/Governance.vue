@@ -8,9 +8,11 @@
 
 
             <div class="row peopleRow">
-                <div class="col-12 personRow"
-                     v-for="(team, teamName) in getTeams"
-                     :key="'team'+ team">
+
+                <div class="col-lg-6 col-xl-6 col-sm-12 col-md-12">
+                    <div class="col-12 personRow"
+                         v-for="(team, teamName) in getTeams"
+                         :key="'team'+ team">
 
                         <h6 v-bind:class="{
                         'green': teamName === 'Management',
@@ -22,7 +24,7 @@
                         </h6>
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="column col-lg-3 col-xl-3 col-md-12 col-sm-12"
+                                <div class="column col-lg-4 col-xl-4 col-md-6 col-sm-6"
                                      v-for="(member, index) in team"
                                      :key="'member'+index">
                                     <div class="card person"
@@ -45,27 +47,32 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
-                <div class="col-12 personRow advisoryRow">
-                    <h6 class="grey">
-                        Advisory Board <hr>
-                    </h6>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="column col-lg-2 col-xl-2 col-md-6 col-sm-6"
-                                 v-for="(memberVal, memberName, index) in getBoard"
-                                :key="'advisoryMember'+index">
-                                <div class="card person">
-                                    <div class="card-body">
-                                        <div class="name" v-html="memberName"></div>
-                                        <hr class="white">
-                                        <div class="role" v-html="memberVal"></div>
+
+                <div class="col-lg-6 col-xl-6 col-sm-12 col-md-12">
+                    <div class="col-12 personRow advisoryRow">
+                        <h6 class="grey">
+                            Advisory Board <hr>
+                        </h6>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="column col-lg-2 col-xl-2 col-md-6 col-sm-6"
+                                     v-for="(memberVal, memberName, index) in getBoard"
+                                     :key="'advisoryMember'+index">
+                                    <div class="card person">
+                                        <div class="card-body">
+                                            <div class="name" v-html="memberName"></div>
+                                            <hr class="white">
+                                            <div class="role" v-html="memberVal"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
