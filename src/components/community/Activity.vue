@@ -597,6 +597,10 @@
 
     .tabs .selector {}
 
+    .tabs:hover {
+        cursor: pointer;
+    }
+
 </style>
 
 <style>
