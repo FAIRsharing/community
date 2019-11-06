@@ -1,3 +1,5 @@
+<!-- tabs were inspired by Nenad Kaevik @ https://codepen.io/nenadkaevik/pen/odyrGm -->
+
 <template>
     <div class="container-fluid">
 
@@ -37,26 +39,6 @@
                             </div>
                         </nav>
                     </div>
-                    <!--
-                    <div class="row tabRow">
-                        <ul class="nav">
-                            <li class="nav-item"
-                                v-for="tab in getTabs"
-                                :key="'tab_'+tab" v-bind:class="currentDisplay">
-                                <button class="btn active"
-                                        type="button"
-                                        v-on:click="currentDisplay = tab"
-                                        v-bind:class="{
-                                            currentDisplay,
-                                            'btn-orange': tab === 'change',
-                                            'btn-blue': tab === 'build',
-                                            'btn-green': tab === 'train'}">
-                                    {{tab}}
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    -->
                     <!-- CONTENT -->
                     <div class="row textRow" v-bind:class="currentDisplay">
                         <div v-for="(dataVal, dataKey) in gridData"

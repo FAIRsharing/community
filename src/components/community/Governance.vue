@@ -55,6 +55,14 @@
                         <h6 class="grey">
                             Advisory Board <hr>
                         </h6>
+
+                        <ul class="advisoryBoard">
+                            <li v-for="(memberVal, memberName, index) in getBoard"
+                                :key="'advisoryMember'+index">
+                                <b>{{memberName}}:</b> {{memberVal}}
+                            </li>
+                        </ul>
+                        <!--
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="column col-lg-3 col-xl-2 col-md-4 col-sm-6"
@@ -70,6 +78,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
 
