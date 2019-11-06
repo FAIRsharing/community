@@ -20,6 +20,24 @@
 
                 <!-- NAVIGATION -->
                 <div class="container-fluid activityDetails">
+                    <div class="row">
+                        <nav class="tabs">
+                            <div class="selector"
+                                 v-bind:style="{
+                                    left: tabStyle.position,
+                                    background: tabStyle.color
+                                 }">
+                            </div>
+                            <div v-for="tab in getTabs"
+                                 :key="'tab_'+tab"
+                                 v-bind:class="{'active': tab === currentDisplay}"
+                                 v-on:click="switchTab(tab)"
+                                 v-bind:ref=tab>
+                                {{tab}}
+                            </div>
+                        </nav>
+                    </div>
+                    <!--
                     <div class="row tabRow">
                         <ul class="nav">
                             <li class="nav-item"
@@ -38,7 +56,7 @@
                             </li>
                         </ul>
                     </div>
-
+                    -->
                     <!-- CONTENT -->
                     <div class="row textRow" v-bind:class="currentDisplay">
                         <div v-for="(dataVal, dataKey) in gridData"
@@ -90,6 +108,8 @@
 
 <script>
     import {Chart} from 'highcharts-vue'
+
+
 
     export default {
         name: "Activity",
@@ -350,7 +370,8 @@
                         }
                     }
                 },
-                currentDisplay: 'change'
+                currentDisplay: 'change',
+                tabStyle: {}
             }
         },
         computed: {
@@ -361,8 +382,21 @@
                 }
                 return output;
             }
+        },
+        methods: {
+            switchTab: function(tab) {
+                let properties = {
+                    change: [0, '#e67e22'],
+                    build: [150, '#27aae1'],
+                    train: [300, '#359154']
+                };
+                this.currentDisplay = tab;
+                this.tabStyle.position = properties[tab][0] + 'px';
+                this.tabStyle.color = properties[tab][1];
+            }
         }
     }
+
 </script>
 
 <style scoped>
@@ -511,6 +545,57 @@
     .nav-item.change {}
     .nav-item.build {}
     .nav-item.train {}
+
+
+    /* TABS */
+    .tabs{
+        margin-top:30px;
+        margin-bottom:20px;
+        font-size:15px;
+        padding:0px;
+        list-style:none;
+        background:#fff;
+        box-shadow:3px 3px 4px #ccc;
+        display:inline-block;
+        border-radius:50px;
+        position:relative;
+    }
+
+    .tabs div{
+        text-decoration:none;
+        color: #777;
+        text-transform:uppercase;
+        padding:10px 20px;
+        display:inline-block;
+        position:relative;
+        z-index:1;
+        transition-duration:0.6s;
+        width:150px;
+        text-align: center;
+    }
+
+    .tabs div.active{
+        color:#fff;
+    }
+
+    .tabs .selector{
+        height:100%;
+        width:150px;
+        display:inline-block;
+        position:absolute;
+        left:0px;
+        top:0;
+        z-index:1;
+        border-radius:50px;
+        transition-duration:0.6s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        background: #e67e22;
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+        color:white;
+    }
+
+    .tabs .selector {}
 
 </style>
 
