@@ -10,20 +10,10 @@
             <div class="col-10 navbar-collapse collapse show navbar">
 
                 <div class="navContainer">
-
-                    <form action="/search" class="solr-search">
-                        <input class="input"
-                               type="text"
-                               placeholder="Search FAIRsharing"
-                               aria-invalid="false" style="">
-                    </form>
-                    <button class="btn navButton mainButton">Standards</button>
-                    <button class="btn navButton mainButton">Databases</button>
-                    <button class="btn navButton mainButton">Policies</button>
-                    <button class="btn navButton mainButton">Collections</button>
-                    <button class="btn navButton ternaryButton">Add/claim content</button>
-                    <button class="btn navButton secondaryButton">Stats</button>
-                    <button class="btn navButton secondaryButton">Login/Register</button>
+                    <p>
+                        <button class="btn navButton mainButton"><router-link to="/datascriptor">DataScript</router-link></button>
+                        <button class="btn navButton mainButton"><router-link to="/community">Community</router-link></button>
+                    </p>
                 </div>
 
             </div>

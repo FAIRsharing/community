@@ -1,0 +1,111 @@
+{
+  "name": "study name",
+  "description": "optional study description",
+  "design": {
+    "type": "here you can describe your type of design",
+    "arms": [
+      {
+        "id": "",
+        "name": "treatment",
+        "subjectType": "Human",
+        "size": 10,
+        "elements": [
+          {
+            "id": "",
+            "name": "screem",
+            "duration": 5,
+            "durationUnit": "days",
+            "epoch": 0
+          },
+          {
+            "id": "",
+            "name": "first treatment",
+            "agent": "some drug",
+            "intensity": 10,
+            "intensityUnit": "mg",
+            "duration": 5,
+            "durationUnit": "min",
+            "epoch": 1
+          },
+          {
+            "id": "",
+            "name": "surgical treatment",
+            "agent": "surgery",
+            "epoch": 2
+          },
+          {
+            "id": "",
+            "name": "follow-up",
+            "duration": 5,
+            "durationUnit": "days",
+            "epoch": 3
+          }
+        ],
+        "events": [
+          {
+            "action": "sampling",
+            "input": "subject",
+            "output": "liver sample",
+            "outputSize": 1,
+            "epoch": 2
+          },
+          {
+            "action": "sampling",
+            "input": "subject",
+            "output": "blood sample",
+            "outputSize": 3,
+            "epoch": 1
+          },
+          {
+            "action": "DNA extraction",
+            "input": "blood sample",
+            "output": "DNA",
+            "outputSize": 1
+          },
+          {
+            "action": "whole genome sequencing",
+            "input": "DNA",
+            "instrumentation": "Illumina H2000Seq",
+            "parameters": {},
+            "output": "FASTA File"
+          },
+          {
+            "action": "variant calling",
+            "input": "FASTA File",
+            "instrumentation": "some VC software",
+            "parameters": {},
+            "output": "VCF file"
+          }
+        ]
+      },
+      {
+        "id": "",
+        "name": "control",
+        "subjectType": "Homo Sapiens",
+        "size": 8,
+        "elements": [],
+        "events": []
+      }
+    ]
+  },
+  "groups": [{
+    "name": "group_01",
+    "subjects": [],
+    "samples": [],
+    "extracts": [],
+    "otherMaterials": [],
+    "dataset": {
+      "data": {
+        "param_01": [],
+        "param_02": []
+      },
+      "schema": {
+        "param_01": "number",
+        "param_02": "string"
+      }
+    },
+    "metadata": {},
+    "files": []
+  }]
+
+}

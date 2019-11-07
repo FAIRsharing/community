@@ -1,15 +1,12 @@
 <template>
   <div id="app">
-    <!--<img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <top-bar></top-bar>
-    <community></community>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import topBar from './components/topBar.vue'
-import Community from './components/community/Community.vue'
 import Highcharts from 'highcharts'
 
 let customColors = ['#e67e22', '#27aae1', '#359154'];
@@ -32,8 +29,7 @@ Highcharts.setOptions({
 export default {
   name: 'app',
   components: {
-      topBar,
-      Community
+      topBar
   }
 }
 </script>

@@ -45,7 +45,9 @@
                              :key="'text_' + dataKey"
                              v-bind:class="currentDisplay">
 
-                            <div v-if="dataKey === currentDisplay">
+
+                            <transition name="slide">
+                                <div v-if="dataKey === currentDisplay">
                                 <div class="activitySubTitle">
                                     <span class="text-uppercase">{{dataKey}}</span> - {{dataVal.description}}
                                 </div>
@@ -77,6 +79,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </transition>
                         </div>
 
                     </div>
@@ -382,6 +385,7 @@
 </script>
 
 <style scoped>
+
     p.text {
         text-align: justify;
         margin: 60px 0;
