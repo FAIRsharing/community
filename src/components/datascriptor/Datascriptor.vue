@@ -1,8 +1,7 @@
 <template>
-    <div class="container mainContainer">
+    <div class="container-fluid mainContainer">
         <div class="row">
-            <div class="col-12" style="display:block;">
-                <pre>{{nodes | jsonDump}}</pre>
+            <div class="col-12">
             </div>
             <div class="col-12">
                 <highcharts :constructor-type="'ganttChart'" :options="chartOptions"></highcharts>
@@ -16,20 +15,12 @@
     import {Chart} from 'highcharts-vue'
     import Highcharts from 'highcharts'
 
-    let today = new Date(),
-        day = 1000 * 60 * 60 * 24,
-        // Utility functions
-        dateFormat = Highcharts.dateFormat,
-        defined = Highcharts.defined,
-        isObject = Highcharts.isObject,
-        reduce = Highcharts.reduce;
+    let customColors = ['#e67e22', '#27aae1', '#359154'];
+    Highcharts.setOptions({
+        colors: customColors
+    });
 
-    // Set to 00:00:00:000 today
-    today.setUTCHours(0);
-    today.setUTCMinutes(0);
-    today.setUTCSeconds(0);
-    today.setUTCMilliseconds(0);
-    today = today.getTime();
+    let day = 1000 * 60 * 60 * 24;
 
     export default {
         name: "Datascriptor.vue",
@@ -39,175 +30,144 @@
         data() {
             return {
                 nodes: StudyDesign,
-                chartOptions: {
+                chartOptions:  {
+
+                    chart: {
+                        spacingLeft: 1,
+                        colors: ['#e67e22', '#27aae1', '#359154'],
+                        height: 400
+                    },
+
+                    connectors: {
+                        lineWidth: 2,
+                        endMarker: {
+                            radius: 5
+                        },
+                        startMarker: {
+                            radius: 5
+                        }
+                    },
+
+                    title: {
+                        text: 'Interactive Gantt Chart'
+                    },
+
+                    subtitle: {
+                        text: 'Drag and drop points to edit'
+                    },
+
+                    plotOptions: {
+                        series: {
+                            animation: false, // Do not animate dependency connectors
+                            dragDrop: {
+                                draggableX: true,
+                                draggableY: true,
+                                dragMinY: 0,
+                                dragMaxY: 2,
+                                dragPrecisionX: day / 3 // Snap to eight hours
+                            },
+                            dataLabels: {
+                                enabled: true,
+                                format: '{point.name}',
+                                style: {
+                                    cursor: 'default',
+                                    pointerEvents: 'none'
+                                }
+                            },
+                            allowPointSelect: true
+                        }
+                    },
+
+                    yAxis: {
+                        categories: [
+                            'Branch 1', 'Events',
+                            'Branch 2', "Events"],
+                        min: 0,
+                        type: 'category',
+                        grid: {
+                            columns: [{
+                                categories: [
+                                    'Branch 1', 'Events',
+                                    'Branch 2', "Events"]
+                            }]
+                        }
+                    },
+
+                    xAxis: [{
+                        tickInterval: 7*day,
+                        type: 'category',
+                        gridLineWidth: 1
+                    }],
+
+                    tooltip: {
+                        xDateFormat: '%a %b %d, %H:%M'
+                    },
+
                     series: [
                         {
-                            name: 'Offices',
+                            name: 'Branch 1',
                             data: [
+
+                                /* Epoch */
                                 {
-                                    name: 'Group 1',
-                                    id: 'G1',
-                                    start: 1,
-                                    end: 3
+                                    start: day,
+                                    end: 6 * day,
+                                    name: 'Screem',
+                                    id: 'screem',
+                                    y: 0,
+                                    color: '#e67e22'
                                 },
                                 {
-                                    name: 'screem',
-                                    id: 'prepare_building',
-                                    parent: 'G1',
-                                    start: 1,
-                                    end: 3
-                                },
-                                {
-                                    name: 'Inspect building',
-                                    id: 'inspect_building',
-                                    dependency: 'prepare_building',
-                                    parent: 'G1',
-                                    start: 2,
-                                    end: 8
-                                },
-                                {
-                                    name: 'Passed inspection',
-                                    id: 'passed_inspection',
-                                    dependency: 'inspect_building',
-                                    parent: 'G1',
-                                    start: 4,
-                                    end: 4,
+                                    start: 7*day,
                                     milestone: true,
-                                    owner: 'Peter'
+                                    name: 'First Treatment',
+                                    id: 'treatment_1',
+                                    dependency: 'screem',
+                                    y: 0,
+                                    color: '#27aae1'
                                 },
                                 {
-                                    name: 'Relocate',
-                                    id: 'relocate',
-                                    dependency: 'passed_inspection',
-                                    parent: 'G1',
-                                    owner: 'Josh'
-                                },
-                                {
-                                    name: 'Relocate staff',
-                                    id: 'relocate_staff',
-                                    parent: 'relocate',
-                                    start: today + 10 * day,
-                                    end: today + 11 * day,
-                                    owner: 'Mark'
-                                },
-                                {
-                                    name: 'Relocate test facility',
-                                    dependency: 'relocate_staff',
-                                    parent: 'relocate',
-                                    start: today + 11 * day,
-                                    end: today + 13 * day,
-                                    owner: 'Anne'
-                                },
-                                {
-                                    name: 'Relocate cantina',
-                                    dependency: 'relocate_staff',
-                                    parent: 'relocate',
-                                    start: today + 11 * day,
-                                    end: today + 14 * day
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Product',
-                            data: [
-                                {
-                                    name: 'New product launch',
-                                    id: 'new_product',
-                                    owner: 'Peter'
-                                },
-                                {
-                                    name: 'Development',
-                                    id: 'development',
-                                    parent: 'new_product',
-                                    start: today - day,
-                                    end: today + (11 * day),
-                                    completed: {
-                                        amount: 0.6,
-                                        fill: '#e80'
-                                    },
-                                    owner: 'Susan'
-                                },
-                                {
-                                    name: 'Beta',
-                                    id: 'beta',
-                                    dependency: 'development',
-                                    parent: 'new_product',
-                                    start: today + 12.5 * day,
+                                    start: 8 * day,
                                     milestone: true,
-                                    owner: 'Peter'
+                                    name: 'Surgical treatment',
+                                    id: 'Surgical_treatment',
+                                    y: 0,
+                                    dependency: 'treatment_1',
+                                    color: '#359154'
                                 },
                                 {
-                                    name: 'Final development',
-                                    id: 'finalize',
-                                    dependency: 'beta',
-                                    parent: 'new_product',
-                                    start: today + 13 * day,
-                                    end: today + 17 * day
+                                    start: 9 * day,
+                                    end: 15 * day,
+                                    name: 'Follow-up',
+                                    id: 'follow_up',
+                                    dependency: 'treatment_1',
+                                    y: 0,
+                                    color: 'red'
+                                },
+
+                                /* Events */
+                                {
+                                    start: 8 * day,
+                                    end: 9 * day,
+                                    name: 'Sampling',
+                                    id: 'Sampling_2',
+                                    dependency: 'Surgical_treatment',
+                                    y: 1,
+                                    color: '#359154'
                                 },
                                 {
-                                    name: 'Launch',
-                                    dependency: 'finalize',
-                                    parent: 'new_product',
-                                    start: today + 17.5 * day,
+                                    start: 7 * day,
+                                    end: 7 * day,
                                     milestone: true,
-                                    owner: 'Peter'
+                                    name: 'Sampling',
+                                    id: 'Sampling_1',
+                                    dependency: 'treatment_1',
+                                    y: 1,
+                                    color: '#27aae1'
                                 }
                             ]
                         }
                     ],
-                    tooltip: {
-                        pointFormatter: function () {
-                            var point = this,
-                                format = '%e. %b',
-                                options = point.options,
-                                completed = options.completed,
-                                amount = isObject(completed) ? completed.amount : completed,
-                                status = ((amount || 0) * 100) + '%',
-                                lines;
-
-                            lines = [{
-                                value: point.name,
-                                style: 'font-weight: bold;'
-                            }, {
-                                title: 'Start',
-                                value: dateFormat(format, point.start)
-                            }, {
-                                visible: !options.milestone,
-                                title: 'End',
-                                value: dateFormat(format, point.end)
-                            }, {
-                                title: 'Completed',
-                                value: status
-                            }, {
-                                title: 'Owner',
-                                value: options.owner || 'unassigned'
-                            }];
-
-                            return reduce(lines, function (str, line) {
-                                var s = '',
-                                    style = (
-                                        defined(line.style) ? line.style : 'font-size: 0.8em;'
-                                    );
-                                if (line.visible !== false) {
-                                    s = (
-                                        '<span style="' + style + '">' +
-                                        (defined(line.title) ? line.title + ': ' : '') +
-                                        (defined(line.value) ? line.value : '') +
-                                        '</span><br/>'
-                                    );
-                                }
-                                return str + s;
-                            }, '');
-                        }
-                    },
-                    title: {
-                        text: 'Gantt Project Management'
-                    },
-                    xAxis: {
-                        currentDateIndicator: true,
-                        min: 1,
-                        max: 100
-                    }
                 }
             }
         },
