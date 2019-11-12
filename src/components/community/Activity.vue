@@ -39,8 +39,9 @@
                             </div>
                         </nav>
                     </div>
+
                     <!-- CONTENT -->
-                    <div class="row textRow" v-bind:class="currentDisplay">
+                    <div class="row textRow no-border" v-bind:class="currentDisplay">
                         <div v-for="(dataVal, dataKey) in gridData"
                              :key="'text_' + dataKey"
                              v-bind:class="currentDisplay">
@@ -316,6 +317,51 @@
                                     ]
                                 }
                             ],
+                            "8. Connecting FAIRsharing to data stewardship and data management plans tools": [
+                                {
+                                    description:
+                                    "<td> We have a MoU with the <b>Data Stewardship Wizard</b> to provide metadata information on databases, " +
+                                    "standards and data policies to inform and drive instances of the Data Stewardship Wizard. </td>",
+                                    organization: [
+                                        "<a href='https://commonfund.nih.gov/commons' target='_blank'> GO-FAIR Build </a>",
+                                        "<a href='https://www.go-fair.org/implementation-networks/overview/' target='_blank'>NIH Data Commons teams</a>",
+                                    ]
+                                }
+                            ],
+                            "9. Data FAIRification ": [
+                                {
+                                    description:
+                                    "<td> We are developing a <b>FAIR Cookbook</b>, a process with examples of methods and tools needed to increase the level of " +
+                                    "FAIRness of biomedical datasets, as part of a public-private consortium under the Innovative Medicine Initiative (IMI) programme. " +
+                                    "Details of this work and participants <a href='https://docs.google.com/document/d/1QV_TZMJJp7QF1RwIklwVZTqy_3kcP9oA-tkdKqExegc/edit?usp=sharing' target='_blank'> here</a>.</td>",
+                                    organization: [
+                                        "FAIRsharing team",
+                                    ],
+                                    projects: [
+                                        "<a href='https://fairplus-project.eu/about/how-project-organised' target='_blank'> IMI FAIRplus </a>"
+                                    ]
+                                }
+                            ],
+                            "10. Metadata standards for machines": [
+                                {
+                                    description:
+                                    "<td>We are investigating how to maximize the <b>‘computability’ of these data/metadata standards</b>" +
+                                    " which are essential to measure the level of compliance of a given dataset (or other digital" +
+                                    " object) against the relevant metadata descriptors. These machine-readable standards will" +
+                                    " provide the necessary quantitative and verifiable measures of the degree by which a digital" +
+                                    " object meet these reporting guidelines.  Our work will also feed into a larger GO-FAIR driven" +
+                                    " effort, as described in this <a href=\"http://arxiv.org/abs/1902.11162\">preprint</a>.\n" +
+                                    "</td>",
+                                    organization: [
+                                        "FAIRsharing Team",
+                                        "<a href='' target='_blank'>GO-FAIR OPEDAS IN</a>",
+                                    ],
+                                    projects: [
+                                        "<a href='https://commonfund.nih.gov/commons' target='_blank'> NIH Data Commons </a> (partly)",
+                                        "GO-FAIR StRePo IN;"
+                                    ]
+                                }
+                            ],
                         }
                     },
                     train: {
@@ -396,14 +442,9 @@
     }
 
     .textRow {
-        padding: 20px;
+        padding: 0 20px 10px 20px;
         border:1px solid #ccc;
     }
-
-    .textRow.change {
-        border:3px solid #e67e22;
-    }
-
     .change, .build, .train {
         width:100%;
     }
@@ -411,23 +452,44 @@
     .activitySubTitle {
         padding:10px 20px;
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.3rem;
         color:white;
         margin-bottom:10px;
         width:100%;
     }
 
-    .change .activitySubTitle, .change .organization, .btn-orange {
+    .change .activitySubTitle, .btn-orange {
         background-color: #e67e22;
     }
 
-    .build .activitySubTitle, .build .organization, .btn-blue {
+    .build .activitySubTitle, .btn-blue {
         background-color: #27aae1;
     }
 
-    .train .activitySubTitle, .train .organization, .btn-green {
+    .train .activitySubTitle, .btn-green {
         background-color: #359154;
     }
+
+
+    .change .organization {
+        color: #e67e22;
+    }
+
+    .build .organization {
+        color: #27aae1;
+    }
+
+    .train .organization{
+        color: #359154
+    }
+
+    .organization {
+        background: white;
+        box-shadow: 3px 3px 4px #ccc;
+        font-weight: bolder;
+    }
+
+
 
     .change .activity .card-header {
         color: #e67e22;
@@ -447,27 +509,8 @@
         font-size: 1.1rem;
     }
 
-
-    /*
-    .btn-green, .btn-orange,.btn-blue {
-        position: relative;
-        top:2px;
-    }*/
-
     .btn-green:focus, .btn-orange:focus, .btn-blue:focus {
         box-shadow:0 0 !important;
-    }
-
-    .textRow.change {
-        border:2px solid #bf6516;
-    }
-
-    .textRow.build {
-        border:2px solid #1a8bbb;
-    }
-
-    .textRow.train {
-        border:2px solid #276c3e;
     }
 
     .no-border {
@@ -528,11 +571,6 @@
         min-width:150px;
     }
 
-    .nav-item.change {}
-    .nav-item.build {}
-    .nav-item.train {}
-
-
     /* TABS */
     .tabs{
         margin-top:30px;
@@ -590,9 +628,19 @@
 </style>
 
 <style>
-    .organization,
-    .organization a,
-    .organization a:visited {
-        color: white !important;
+    .change .organization a,
+    .change .organization a:visited {
+        color: #e67e22 !important;
     }
+
+    .build .organization a,
+    .build .organization a:visited {
+        color: #27aae1 !important;
+    }
+
+    .train .organization a,
+    .train .organization a:visited {
+        color: #27aae1 !important;
+    }
+
 </style>
