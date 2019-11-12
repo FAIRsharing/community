@@ -5,7 +5,8 @@
                 <div class="col-12 leftCol">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-lg-4 col-xl-4 col-md-12 col-sm-12">
+
+                            <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
                                 <div class="text">
                                     Anyone can use FAIRsharing. Adopters, however, use FAIRsharing specifically to:
                                     <ol>
@@ -20,7 +21,8 @@
                                     Adopters have a FAIRsharing logo on their websites with a link from their website to our homepage.<br>
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-xl-8 col-md-12 col-sm-12">
+
+                            <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
                                 <div class="graph">
                                     <highcharts :options="chartOptions" class="shadowBox chartMin"></highcharts>
                                 </div>
@@ -106,7 +108,7 @@
                     },
                     plotOptions: {
                         series: {
-                            pointWidth: 40,
+                            pointWidth: 50,
                             pointPadding: 0.1,
                             column: {
                                 stacking: 'normal'
@@ -299,8 +301,13 @@
     }
 
     .leftCol .text{
-        margin-top: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         text-align: justify;
+    }
+
+    .chartMin {
+        margin-bottom: 20px;
     }
 
 </style>
