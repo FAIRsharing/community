@@ -18,6 +18,7 @@ import 'bootstrap/scss/bootstrap.scss'
 import './breakpoints.scss'
 
 import Community from './components/community/Community'
+import Datascriptor from './components/datascriptor/Datascriptor'
 
 Variablepie(Highcharts);
 More(Highcharts);
@@ -34,7 +35,7 @@ Vue.config.productionTip = false;
 
 const routes = [
   {path: '/community', component: Community},
-  {path : '/', component: Community}
+  {path : '/datascriptor', component: Datascriptor}
 ];
 
 const router = new VueRouter({

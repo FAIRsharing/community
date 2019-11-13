@@ -1,0 +1,2128 @@
+{
+  "Arm 1": {
+    "name": "Arm 1",
+    "groupSize": 2,
+    "sourceType": {
+      "category": {
+        "term": "genotype"
+      },
+      "value": {
+        "term": "control - normal"
+      }
+    },
+    "cells": [
+      {
+        "name": "st_cl1",
+        "elements": [
+          {
+            "type": "screen",
+            "isTreatment": false,
+            "factorValues": [
+              {
+                "factor": {
+                  "name": "DURATION",
+                  "type": {
+                    "term": "time"
+                  }
+                },
+                "value": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "st_cl2",
+        "elements": [
+          {
+            "isTreatment": true,
+            "type": "radiological intervention",
+            "factorValues": [
+              {
+                "factor": {
+                  "name": "duration",
+                  "type": {
+                    "term": "time"
+                  }
+                },
+                "value": "1",
+                "unit": {
+                  "term": "hr"
+                }
+              },
+              {
+                "factor": {
+                  "name": "dose",
+                  "type": {
+                    "term": "quantity"
+                  }
+                },
+                "value": "250",
+                "unit": {
+                  "term": "lux"
+                }
+              },
+              {
+                "factor": {
+                  "name": "light",
+                  "type": {
+                    "term": "electromagnetic energy"
+                  }
+                },
+                "value": "visible light at 3000K produced by LED array"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "st_cl3",
+        "elements": [
+          {
+            "isTreatment": false,
+            "type": "washout",
+            "factorValues": [
+              {
+                "factor": {
+                  "name": "DURATION",
+                  "type": {
+                    "term": "time"
+                  }
+                },
+                "value": "2",
+                "unit": {
+                  "term": "weeks"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "st_cl4",
+        "elements": [
+          {
+            "isTreatment": true,
+            "type": "radiological intervention",
+            "factorValues": [
+              {
+                "factor": {
+                  "name": "duration",
+                  "type": {
+                    "term": "time"
+                  }
+                },
+                "value": "1",
+                "unit": {
+                  "term": "hour"
+                }
+              },
+              {
+                "factor": {
+                  "name": "dose",
+                  "type": {
+                    "term": "quantity"
+                  }
+                },
+                "value": "250",
+                "unit": {
+                  "term": "lux"
+                }
+              },
+              {
+                "factor": {
+                  "name": "light",
+                  "type": {
+                    "term": "electromagnetic energy"
+                  }
+                },
+                "value": "visible light at 3000K produced by LED array"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "st_cl5",
+        "elements": [
+          {
+            "isTreatment": false,
+            "type": "follow-up",
+            "factorValues": [
+              {
+                "factor": {
+                  "name": "DURATION",
+                  "type": {
+                    "term": "time"
+                  }
+                },
+                "value": 1,
+                "unit": {
+                  "term": "month"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sampleAndAssayPlans": [
+      {
+        "name": "none",
+        "samplePlan": [
+          {
+            "@id": "MAT1",
+            "name": "saliva",
+            "productType": "sample",
+            "size": 1,
+            "characteristics": [
+              {
+                "category": {
+                  "term": "organism part"
+                },
+                "value": {
+                  "term": "saliva"
+                }
+              }
+            ]
+          },
+          {
+            "@id": "MAT2",
+            "name": "subject",
+            "productType": "sample",
+            "size": 1,
+            "characteristics": [
+              {
+                "category": {
+                  "term": "organism part"
+                },
+                "value": {
+                  "term": "whole organism"
+                }
+              }
+            ]
+          }
+        ],
+        "assayPlan": [
+          {
+            "@id": "629daec1-8e25-46c0-a7c9-143a6adc1a49",
+            "measurementType": {
+              "term": "light sensitivity"
+            },
+            "technologyType": {
+              "term": "electroencephalography"
+            },
+            "nodes": [
+              {
+                "@id": "data_collection_000",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Somnotouch"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "sampling_rate"
+                    },
+                    "value": {
+                      "term": "200 Hz"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "1 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_003",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_002",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_004",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Somnotouch"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "sampling_rate"
+                    },
+                    "value": {
+                      "term": "200 Hz"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "5 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_005",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Somnotouch"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "sampling_rate"
+                    },
+                    "value": {
+                      "term": "200 Hz"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "6 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_000",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_006",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Somnotouch"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "sampling_rate"
+                    },
+                    "value": {
+                      "term": "200 Hz"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "7 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_003",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Somnotouch"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "sampling_rate"
+                    },
+                    "value": {
+                      "term": "200 Hz"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "4 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_005",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_007",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_001",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Somnotouch"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "sampling_rate"
+                    },
+                    "value": {
+                      "term": "200 Hz"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "2 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_001",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_007",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Somnotouch"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "sampling_rate"
+                    },
+                    "value": {
+                      "term": "200 Hz"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "8 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_004",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_002",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Somnotouch"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "sampling_rate"
+                    },
+                    "value": {
+                      "term": "200 Hz"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "3 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_006",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              }
+            ],
+            "links": [
+              [
+                "data_collection_002",
+                "raw_data_file_000_002"
+              ],
+              [
+                "data_collection_005",
+                "raw_data_file_000_005"
+              ],
+              [
+                "data_collection_003",
+                "raw_data_file_000_003"
+              ],
+              [
+                "data_collection_001",
+                "raw_data_file_000_001"
+              ],
+              [
+                "data_collection_007",
+                "raw_data_file_000_007"
+              ],
+              [
+                "data_collection_004",
+                "raw_data_file_000_004"
+              ],
+              [
+                "data_collection_000",
+                "raw_data_file_000_000"
+              ],
+              [
+                "data_collection_006",
+                "raw_data_file_000_006"
+              ]
+            ]
+          },
+          {
+            "@id": "79159c6b-1296-48e9-9b29-7a3d760b2d78",
+            "measurementType": {
+              "term": "melatonine concentration"
+            },
+            "technologyType": {
+              "term": "radioimmunoprecipitation assay"
+            },
+            "nodes": [
+              {
+                "@id": "radioimmunoprecipitation_004_000",
+                "name": "radioimmunoprecipitation",
+                "protocolType": {
+                  "term": "radioimmunoprecipitation"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Beckon Dickison XYZ"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "antibody"
+                    },
+                    "value": {
+                      "term": "AbCam antiMelatonine "
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "5 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "radioimmunoprecipitation_001_000",
+                "name": "radioimmunoprecipitation",
+                "protocolType": {
+                  "term": "radioimmunoprecipitation"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Beckon Dickison XYZ"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "antibody"
+                    },
+                    "value": {
+                      "term": "AbCam antiMelatonine "
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "2 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_003",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_002",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "radioimmunoprecipitation_005_000",
+                "name": "radioimmunoprecipitation",
+                "protocolType": {
+                  "term": "radioimmunoprecipitation"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Beckon Dickison XYZ"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "antibody"
+                    },
+                    "value": {
+                      "term": "AbCam antiMelatonine "
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "6 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_007",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_000",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "radioimmunoprecipitation_003_000",
+                "name": "radioimmunoprecipitation",
+                "protocolType": {
+                  "term": "radioimmunoprecipitation"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Beckon Dickison XYZ"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "antibody"
+                    },
+                    "value": {
+                      "term": "AbCam antiMelatonine "
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "4 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_005",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "radioimmunoprecipitation_000_000",
+                "name": "radioimmunoprecipitation",
+                "protocolType": {
+                  "term": "radioimmunoprecipitation"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Beckon Dickison XYZ"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "antibody"
+                    },
+                    "value": {
+                      "term": "AbCam antiMelatonine "
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "1 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "radioimmunoprecipitation_007_000",
+                "name": "radioimmunoprecipitation",
+                "protocolType": {
+                  "term": "radioimmunoprecipitation"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Beckon Dickison XYZ"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "antibody"
+                    },
+                    "value": {
+                      "term": "AbCam antiMelatonine "
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "8 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_001",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_004",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "extraction_000",
+                "name": "extraction",
+                "protocolType": {
+                  "term": "extraction"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": []
+              },
+              {
+                "@id": "extract_000_000",
+                "name": "extract",
+                "productType": "extract",
+                "size": 1,
+                "characteristics": [
+                  {
+                    "category": {
+                      "term": "extract type"
+                    },
+                    "value": {
+                      "term": "extract"
+                    }
+                  }
+                ]
+              },
+              {
+                "@id": "radioimmunoprecipitation_006_000",
+                "name": "radioimmunoprecipitation",
+                "protocolType": {
+                  "term": "radioimmunoprecipitation"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Beckon Dickison XYZ"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "antibody"
+                    },
+                    "value": {
+                      "term": "AbCam antiMelatonine "
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "7 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "radioimmunoprecipitation_002_000",
+                "name": "radioimmunoprecipitation",
+                "protocolType": {
+                  "term": "radioimmunoprecipitation"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "instrument"
+                    },
+                    "value": {
+                      "term": "Beckon Dickison XYZ"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "antibody"
+                    },
+                    "value": {
+                      "term": "AbCam antiMelatonine "
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "3 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_006",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              }
+            ],
+            "links": [
+              [
+                "extract_000_000",
+                "radioimmunoprecipitation_007_000"
+              ],
+              [
+                "radioimmunoprecipitation_001_000",
+                "raw_data_file_000_001"
+              ],
+              [
+                "extract_000_000",
+                "radioimmunoprecipitation_002_000"
+              ],
+              [
+                "radioimmunoprecipitation_003_000",
+                "raw_data_file_000_003"
+              ],
+              [
+                "radioimmunoprecipitation_005_000",
+                "raw_data_file_000_005"
+              ],
+              [
+                "radioimmunoprecipitation_006_000",
+                "raw_data_file_000_006"
+              ],
+              [
+                "extraction_000",
+                "extract_000_000"
+              ],
+              [
+                "extract_000_000",
+                "radioimmunoprecipitation_004_000"
+              ],
+              [
+                "radioimmunoprecipitation_000_000",
+                "raw_data_file_000_000"
+              ],
+              [
+                "extract_000_000",
+                "radioimmunoprecipitation_006_000"
+              ],
+              [
+                "extract_000_000",
+                "radioimmunoprecipitation_001_000"
+              ],
+              [
+                "radioimmunoprecipitation_007_000",
+                "raw_data_file_000_007"
+              ],
+              [
+                "radioimmunoprecipitation_004_000",
+                "raw_data_file_000_004"
+              ],
+              [
+                "extract_000_000",
+                "radioimmunoprecipitation_003_000"
+              ],
+              [
+                "extract_000_000",
+                "radioimmunoprecipitation_005_000"
+              ],
+              [
+                "radioimmunoprecipitation_002_000",
+                "raw_data_file_000_002"
+              ],
+              [
+                "extract_000_000",
+                "radioimmunoprecipitation_000_000"
+              ]
+            ]
+          },
+          {
+            "@id": "ff8460ea-1b4d-4202-b617-271925627f26",
+            "measurementType": {
+              "term": "light sensitivity phenotyping"
+            },
+            "technologyType": {
+              "term": "direct measurement"
+            },
+            "nodes": [
+              {
+                "@id": "data_collection_023",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "pupilla size"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "8 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_008",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "heart rate"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "1 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_000",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_005",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_014",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "heart rate"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "7 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_010",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_022",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_002",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "sleepiness"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "3 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_000",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "sleepiness"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "1 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_016",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_013",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "heart rate"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "6 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_010",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "heart rate"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "3 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_007",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_022",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "pupilla size"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "7 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_011",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_017",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_001",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "sleepiness"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "2 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_020",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "pupilla size"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "5 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_021",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_001",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_009",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_003",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "sleepiness"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "4 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_005",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "sleepiness"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "6 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_009",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "heart rate"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "2 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_015",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "heart rate"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "8 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_019",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_013",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_012",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "heart rate"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "5 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_003",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_014",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_021",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "pupilla size"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "6 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_016",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "pupilla size"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "1 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_011",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "heart rate"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "4 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_008",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_015",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_023",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_012",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_002",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_019",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "pupilla size"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "4 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_006",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "sleepiness"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "7 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_020",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_017",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "pupilla size"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "2 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_004",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "raw_data_file_000_018",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              },
+              {
+                "@id": "data_collection_018",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "pupilla size"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "3 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_007",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "sleepiness"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "8 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "data_collection_004",
+                "name": "data_collection",
+                "protocolType": {
+                  "term": "data_collection"
+                },
+                "description": "",
+                "uri": "",
+                "version": "",
+                "parameterValues": [
+                  {
+                    "name": {
+                      "term": "variables"
+                    },
+                    "value": {
+                      "term": "sleepiness"
+                    },
+                    "unit": "none"
+                  },
+                  {
+                    "name": {
+                      "term": "time point"
+                    },
+                    "value": {
+                      "term": "5 hr"
+                    },
+                    "unit": "none"
+                  }
+                ]
+              },
+              {
+                "@id": "raw_data_file_000_006",
+                "name": "raw_data_file",
+                "productType": "data file",
+                "size": 1,
+                "characteristics": []
+              }
+            ],
+            "links": [
+              [
+                "data_collection_015",
+                "raw_data_file_000_015"
+              ],
+              [
+                "data_collection_009",
+                "raw_data_file_000_009"
+              ],
+              [
+                "data_collection_006",
+                "raw_data_file_000_006"
+              ],
+              [
+                "data_collection_005",
+                "raw_data_file_000_005"
+              ],
+              [
+                "data_collection_007",
+                "raw_data_file_000_007"
+              ],
+              [
+                "data_collection_011",
+                "raw_data_file_000_011"
+              ],
+              [
+                "data_collection_020",
+                "raw_data_file_000_020"
+              ],
+              [
+                "data_collection_000",
+                "raw_data_file_000_000"
+              ],
+              [
+                "data_collection_023",
+                "raw_data_file_000_023"
+              ],
+              [
+                "data_collection_003",
+                "raw_data_file_000_003"
+              ],
+              [
+                "data_collection_001",
+                "raw_data_file_000_001"
+              ],
+              [
+                "data_collection_004",
+                "raw_data_file_000_004"
+              ],
+              [
+                "data_collection_016",
+                "raw_data_file_000_016"
+              ],
+              [
+                "data_collection_022",
+                "raw_data_file_000_022"
+              ],
+              [
+                "data_collection_014",
+                "raw_data_file_000_014"
+              ],
+              [
+                "data_collection_010",
+                "raw_data_file_000_010"
+              ],
+              [
+                "data_collection_017",
+                "raw_data_file_000_017"
+              ],
+              [
+                "data_collection_008",
+                "raw_data_file_000_008"
+              ],
+              [
+                "data_collection_013",
+                "raw_data_file_000_013"
+              ],
+              [
+                "data_collection_018",
+                "raw_data_file_000_018"
+              ],
+              [
+                "data_collection_019",
+                "raw_data_file_000_019"
+              ],
+              [
+                "data_collection_021",
+                "raw_data_file_000_021"
+              ],
+              [
+                "data_collection_012",
+                "raw_data_file_000_012"
+              ],
+              [
+                "data_collection_002",
+                "raw_data_file_000_002"
+              ]
+            ]
+          }
+        ],
+        "sampleToAssayMap": {
+          "MAT1": [
+            "629daec1-8e25-46c0-a7c9-143a6adc1a49"
+          ],
+          "MAT2": [
+            "79159c6b-1296-48e9-9b29-7a3d760b2d78",
+            "ff8460ea-1b4d-4202-b617-271925627f26"
+          ]
+        }
+      }
+    ],
+    "mappings": [
+      [
+        "st_cl1",
+        "none"
+      ],
+      [
+        "st_cl2",
+        "none"
+      ],
+      [
+        "st_cl3",
+        "none"
+      ],
+      [
+        "st_cl4",
+        "none"
+      ],
+      [
+        "st_cl5",
+        "none"
+      ]
+    ]
+  }
+}

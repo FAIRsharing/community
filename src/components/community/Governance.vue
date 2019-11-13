@@ -60,6 +60,7 @@
                             <li v-for="(memberVal, memberName, index) in getBoard"
                                 :key="'advisoryMember'+index">
                                 <b>{{memberName | trim}}:</b> {{memberVal}}
+                                <hr v-if="index===1">
                             </li>
                         </ul>
                     </div>
@@ -76,7 +77,7 @@
         "Management": [
             {
                 id: 'PI',
-                title: 'Principal Investigator and Founder',
+                title: 'Principal Investigator & Founder',
                 name: 'Susanna-Assunta Sansone',
                 image: 'https://fairsharing.org/static/img/team/susanna.jpg',
                 width: 250,
@@ -91,19 +92,19 @@
                 layout: 'hanging',
                 width: 200,
                 role: 'PI',
-            }]
-        ,
-        "Curation": [
+            },
             {
                 id: 'Coordinator',
-                title: 'Project Coordinator',
+                title: 'Project Coordinator & Curator',
                 name: 'Peter McQuilton',
                 column: 1,
                 image: 'https://fairsharing.org/static/img/team/pete.jpg',
                 layout: 'hanging',
                 width: 200,
-                role: 'Curation',
-            },
+                role: 'PI',
+            }]
+        ,
+        "Curation": [
             {
                 id: 'Curator1',
                 title: 'Knowledge Engineer',
@@ -201,11 +202,14 @@
                 return output;
             },
             getBoard: function(){
+                return nodes['Advisory Board'];
+                /*
                 const ordered = {};
                 Object.keys(nodes['Advisory Board']).sort().forEach(function(key) {
                     ordered[key] = nodes['Advisory Board'][key];
                 });
                 return ordered;
+                */
             }
         },
         filters: {

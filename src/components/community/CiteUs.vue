@@ -2,10 +2,10 @@
     <div class="citeUs">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2 imageZone">
+                <div class="col-3 imageZone">
                     <img src="../../assets/community/fairsharing_paper.jpg">
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">

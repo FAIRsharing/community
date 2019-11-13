@@ -9,7 +9,7 @@
 import topBar from './components/topBar.vue'
 import Highcharts from 'highcharts'
 
-let customColors = ['#e67e22', '#27aae1', '#359154'];
+let customColors = ['#27aae1', '#e67e22', '#359154'];
 Highcharts.setOptions({
     colors: Highcharts.map(customColors, function (color) {
         return {

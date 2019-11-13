@@ -13,7 +13,7 @@
                         <div class="col-3 logoZone">
                             <img :src="item.logo" class="logo">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 textZone">
                             <h5 class="">
                                 {{item.name}}
                                 <hr>
@@ -79,6 +79,9 @@
 
     .grid, .card {
         margin-top:20px;
+        min-height:220px;
+        display: flex;
+        flex-direction: column;
     }
 
     .grid {
@@ -108,6 +111,12 @@
         display:flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .card-body, .textZone {
+        justify-content: center;
+        align-content: center;
+        display: flex;
     }
 
 </style>

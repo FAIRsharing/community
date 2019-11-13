@@ -5,7 +5,7 @@
 
         <div class="row">
 
-            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-12">
+            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-12 activityLeft">
                 <p class="text">
                     FAIRsharing is not just a registry. The team behind FAIRsharing is involved in a number of
                     FAIR-enabling activities, delivering guidance, tools and services with and for a variety of stakeholders.
@@ -41,7 +41,8 @@
                     </div>
 
                     <!-- CONTENT -->
-                    <div class="row textRow no-border" v-bind:class="currentDisplay">
+                    <div class="row textRow no-border"
+                         v-bind:class="currentDisplay">
                         <div v-for="(dataVal, dataKey) in gridData"
                              :key="'text_' + dataKey"
                              v-bind:class="currentDisplay">
@@ -56,7 +57,9 @@
 
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12" v-for="(activity, key, index) in dataVal.items" :key="'activity'+index">
+                                        <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 activityCol"
+                                             v-for="(activity, key, index) in dataVal.items"
+                                             :key="'activity'+index">
                                             <div class="card activity">
 
                                                 <div class="card-header">{{key}}</div>
@@ -417,8 +420,8 @@
         methods: {
             switchTab: function(tab) {
                 let properties = {
-                    change: [0, '#e67e22'],
-                    build: [150, '#27aae1'],
+                    change: [0, '#27aae1'],
+                    build: [150, '#e67e22'],
                     train: [300, '#359154']
                 };
                 this.currentDisplay = tab;
@@ -434,11 +437,7 @@
 
     p.text {
         text-align: justify;
-        margin: 60px 0;
-    }
-
-    .activityDetails {
-        margin-top:20px;
+        margin: 10px 0;
     }
 
     .textRow {
@@ -446,6 +445,17 @@
         border:1px solid #ccc;
     }
     .change, .build, .train {
+        width:100%;
+    }
+
+    .activityLeft {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .chartMin {
         width:100%;
     }
 
@@ -458,11 +468,11 @@
         width:100%;
     }
 
-    .change .activitySubTitle, .btn-orange {
+    .build .activitySubTitle, .btn-orange {
         background-color: #e67e22;
     }
 
-    .build .activitySubTitle, .btn-blue {
+    .change .activitySubTitle, .btn-blue {
         background-color: #27aae1;
     }
 
@@ -471,11 +481,11 @@
     }
 
 
-    .change .organization {
+    .build .organization {
         color: #e67e22;
     }
 
-    .build .organization {
+    .change .organization {
         color: #27aae1;
     }
 
@@ -490,11 +500,10 @@
     }
 
 
-
-    .change .activity .card-header {
+    .build .activity .card-header {
         color: #e67e22;
     }
-    .build .activity .card-header {
+    .change .activity .card-header {
         color: #27aae1;
     }
     .train .activity .card-header {
@@ -519,7 +528,7 @@
     }
 
     .activity {
-        margin-bottom:20px;
+        height:100%
     }
 
     .activity .card-body{
@@ -573,7 +582,7 @@
 
     /* TABS */
     .tabs{
-        margin-top:30px;
+        margin-top:10px;
         margin-bottom:20px;
         font-size:15px;
         padding:0px;
@@ -607,14 +616,14 @@
         width:150px;
         display:inline-block;
         position:absolute;
-        left:0px;
+        left:0;
         top:0;
         z-index:1;
         border-radius:50px;
         transition-duration:0.6s;
         transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-        background: #e67e22;
+        background: #27aae1;
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
         color:white;
     }
@@ -625,22 +634,26 @@
         cursor: pointer;
     }
 
+    .activityCol {
+        margin-bottom: 20px;
+    }
+
 </style>
 
 <style>
     .change .organization a,
     .change .organization a:visited {
-        color: #e67e22 !important;
+        color: #27aae1 !important;
     }
 
     .build .organization a,
     .build .organization a:visited {
-        color: #27aae1 !important;
+        color: #e67e22 !important;
     }
 
     .train .organization a,
     .train .organization a:visited {
-        color: #27aae1 !important;
+        color: #359154 !important;
     }
 
 </style>

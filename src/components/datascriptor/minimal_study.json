@@ -60,14 +60,16 @@
             "action": "DNA extraction",
             "input": "blood sample",
             "output": "DNA",
-            "outputSize": 1
+            "outputSize": 1,
+            "$comment": "Input of this correspond to output of another event"
           },
           {
             "action": "whole genome sequencing",
             "input": "DNA",
             "instrumentation": "Illumina H2000Seq",
             "parameters": {},
-            "output": "FASTA File"
+            "output": "FASTA File",
+            "type": "assay"
           },
           {
             "action": "variant calling",
